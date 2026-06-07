@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum — NOVUS automotive group</title>
+<meta name="description" content="Impressum und Offenlegung gemäß §25 Mediengesetz und §5 ECG — NOVUS automotive group FlexCo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2d5f7e;--blue-d:#1e4258;--blue-dd:#0d1e28;
+  --red:#8b1a1a;--white:#fff;--off:#f5f4f2;--ink:#111;
+  --gray:#6b7a82;--light:#e8e4df;--nav-h:72px;
+  --ease-out:cubic-bezier(0.22,1,0.36,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+
+/* ── NAV ── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;background:rgba(255,255,255,.97);
+  box-shadow:0 1px 0 rgba(0,0,0,.08);
+}
+.nav-menu{display:flex;align-items:center;gap:0;}
+.nav-menu a{
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(0,0,0,.6);padding:10px 14px;transition:color .2s;white-space:nowrap;
+}
+.nav-menu a:hover{color:var(--ink);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-langs{display:flex;gap:2px;}
+.nl{background:none;border:none;padding:4px 6px;
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:1px;text-transform:uppercase;color:rgba(0,0,0,.3);transition:color .2s;cursor:pointer;}
+.nl.on,.nl:hover{color:var(--ink);}
+.nav-cta{
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  background:var(--red);color:#fff;padding:11px 20px;border:none;
+  transition:background .2s;
+}
+.nav-cta:hover{background:#6e1515;}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px;}
+.nb{width:24px;height:2px;background:var(--ink);transition:all .3s;}
+
+/* ── MOBILE NAV ── */
+#mobile-nav{
+  position:fixed;top:0;right:0;bottom:0;z-index:950;
+  width:320px;background:var(--blue-dd);
+  transform:translateX(100%);transition:transform .4s var(--ease-out);
+  padding:100px 40px 60px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;
+}
+#mobile-nav.open{transform:translateX(0);}
+#mobile-nav a{
+  font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);
+  padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s;
+}
+#mobile-nav a:hover{color:#fff;}
+#overlay{position:fixed;inset:0;z-index:799;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .3s;}
+#overlay.on{opacity:1;pointer-events:auto;}
+
+/* ── PAGE HERO ── */
+.page-hero{
+  background:var(--off);padding:140px 48px 60px;
+  border-bottom:3px solid var(--red);
+}
+.page-hero-inner{max-width:960px;margin:0 auto;}
+.breadcrumb{
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;color:var(--gray);
+  display:flex;align-items:center;gap:8px;margin-bottom:20px;
+}
+.breadcrumb a{color:var(--blue);transition:color .2s;}
+.breadcrumb a:hover{color:var(--blue-d);}
+.page-h1{
+  font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,6vw,80px);
+  font-weight:900;letter-spacing:-1px;line-height:.95;text-transform:uppercase;color:var(--ink);
+}
+.page-meta{font-size:13px;font-weight:300;color:var(--gray);margin-top:12px;}
+
+/* ── CONTENT ── */
+.content-wrap{max-width:960px;margin:0 auto;padding:72px 48px;}
+.imp-section{margin-bottom:56px;}
+.imp-section:last-child{margin-bottom:0;}
+.imp-h2{
+  font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.3px;color:var(--ink);
+  margin-bottom:20px;padding-bottom:12px;
+  border-bottom:2px solid var(--light);
+}
+.imp-h3{
+  font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--blue);
+  margin-bottom:8px;margin-top:24px;
+}
+.imp-p{font-size:14px;font-weight:300;line-height:1.85;color:#444;margin-bottom:12px;}
+.imp-p:last-child{margin-bottom:0;}
+.imp-p a{color:var(--blue);border-bottom:1px solid rgba(45,95,126,.3);transition:border-color .2s;}
+.imp-p a:hover{border-color:var(--blue);}
+.imp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--light);margin:20px 0;}
+.imp-cell{background:var(--off);padding:18px 20px;}
+.imp-cell-l{
+  font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;color:rgba(0,0,0,.35);margin-bottom:5px;
+}
+.imp-cell-v{font-size:14px;font-weight:400;color:var(--ink);}
+.imp-note{
+  background:rgba(45,95,126,.06);border-left:3px solid var(--blue);
+  padding:16px 20px;margin:20px 0;
+  font-size:13px;font-weight:300;line-height:1.7;color:#444;
+}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:80px 48px;border-top:3px solid var(--red);}
+.footer-grid{max-width:1320px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;}
+.f-col-h{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px;
+}
+.f-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);padding:4px 0;transition:color .2s;}
+.f-col a:hover{color:#fff;}
+.f-tagline{font-size:13px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.35);}
+.footer-bar{
+  max-width:1320px;margin:56px auto 0;padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.07);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+}
+.f-copy{font-size:11px;color:rgba(255,255,255,.2);}
+
+/* ── COOKIE ── */
+#cookie{
+  position:fixed;bottom:0;left:0;right:0;z-index:950;
+  background:rgba(13,13,13,.98);padding:20px 48px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  border-top:1px solid rgba(255,255,255,.08);
+  transform:translateY(100%);transition:transform .4s var(--ease-out);
+}
+#cookie.show{transform:translateY(0);}
+.cookie-text{font-size:12px;font-weight:300;color:rgba(255,255,255,.45);max-width:600px;}
+.cookie-text a{color:var(--blue);}
+.cookie-btns{display:flex;gap:8px;flex-shrink:0;}
+.ck-no{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);padding:10px 18px;transition:all .2s;}
+.ck-no:hover{border-color:rgba(255,255,255,.5);color:#fff;}
+.ck-yes{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--blue);color:#fff;border:none;padding:10px 18px;transition:background .2s;}
+.ck-yes:hover{background:var(--blue-d);}
+
+@media(max-width:900px){
+  #nav{padding:0 20px;}
+  .nav-menu{display:none;}
+  .nav-burger{display:flex;}
+  .page-hero{padding:120px 24px 48px;}
+  .content-wrap{padding:56px 24px;}
+  footer{padding:60px 24px;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
+  .imp-grid{grid-template-columns:1fr;}
+  #cookie{padding:20px;flex-direction:column;}
+}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" style="display:flex;align-items:center;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" style="height:44px;width:auto;">
+      <text style="font-family:Georgia,'Times New Roman',serif;font-size:72px;font-weight:700;fill:#2d5f7e;" x="0" y="72">NOVUS</text>
+      <rect x="300" y="4" width="6" height="72" fill="#8b1a1a"/>
+      <rect x="310" y="4" width="6" height="72" fill="#8b1a1a"/>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#2d5f7e;" x="326" y="36">automotive</text>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#2d5f7e;" x="326" y="62">group</text>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;fill:#8b1a1a;letter-spacing:3px;" x="2" y="104">THE POWER OF COMPETENCIES</text>
+    </svg>
+  </a>
+  <div class="nav-menu">
+    <a href="index.html#models">Modelle</a>
+    <a href="index.html#services">Service</a>
+    <a href="index.html#finder">Händlerfinder</a>
+    <a href="index.html#about">Unternehmen</a>
+    <a href="index.html#news">News</a>
+    <a href="index.html#contact">Kontakt</a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-langs">
+      <button class="nl on" onclick="">DE</button>
+    </div>
+    <a href="partner.html" class="nav-cta">Partner werden</a>
+  </div>
+  <button class="nav-burger" onclick="openMobile()" aria-label="Menü öffnen">
+    <span class="nb"></span><span class="nb"></span><span class="nb"></span>
+  </button>
+</nav>
+
+<div id="mobile-nav">
+  <a href="index.html#models" onclick="closeMobile()">Modelle</a>
+  <a href="index.html#services" onclick="closeMobile()">Service</a>
+  <a href="index.html#finder" onclick="closeMobile()">Händlerfinder</a>
+  <a href="index.html#about" onclick="closeMobile()">Unternehmen</a>
+  <a href="index.html#news" onclick="closeMobile()">News</a>
+  <a href="index.html#contact" onclick="closeMobile()">Kontakt</a>
+  <a href="partner.html" onclick="closeMobile()" style="color:#fff;margin-top:20px;border-top:1px solid rgba(255,255,255,.15);padding-top:20px;">Partner werden →</a>
+</div>
+<div id="overlay" onclick="closeMobile()"></div>
+
+<!-- ══ PAGE HERO ══ -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">NOVUS automotive group</a>
+      <span>›</span>
+      <span>Impressum</span>
+    </div>
+    <h1 class="page-h1">Impressum</h1>
+    <p class="page-meta">Offenlegung gemäß §25 Mediengesetz (MedienG) und §5 E-Commerce-Gesetz (ECG)</p>
+  </div>
+</div>
+
+<!-- ══ CONTENT ══ -->
+<div class="content-wrap">
+
+  <div class="imp-section">
+    <h2 class="imp-h2">Medieninhaber & Herausgeber</h2>
+    <div class="imp-grid">
+      <div class="imp-cell">
+        <div class="imp-cell-l">Unternehmen</div>
+        <div class="imp-cell-v">NOVUS automotive group FlexCo</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Rechtsform</div>
+        <div class="imp-cell-v">Flexible Kapitalgesellschaft (FlexCo)</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Firmenbuchnummer</div>
+        <div class="imp-cell-v">FN 678496 p</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Firmenbuchgericht</div>
+        <div class="imp-cell-v">Landesgericht Wiener Neustadt</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Sitz</div>
+        <div class="imp-cell-v">Wienerherberg, Niederösterreich</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Gründungsjahr</div>
+        <div class="imp-cell-v">2025</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="imp-section">
+    <h2 class="imp-h2">Kontakt & Adresse</h2>
+    <div class="imp-grid">
+      <div class="imp-cell">
+        <div class="imp-cell-l">Postanschrift</div>
+        <div class="imp-cell-v">Trattnerring 1<br>2435 Wienerherberg<br>Österreich</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">E-Mail</div>
+        <div class="imp-cell-v"><a href="mailto:office@novustruck.com" style="color:var(--blue);">office@novustruck.com</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="imp-section">
+    <h2 class="imp-h2">Unternehmensgegenstand</h2>
+    <p class="imp-p">Die NOVUS automotive group FlexCo ist offizieller Generalimporteur für Sinotruk SITRAK Nutzfahrzeuge in Österreich (AT), Tschechien (CZ), der Slowakei (SK) und Ungarn (HU). Das Unternehmen importiert, vertreibt und betreut Nutzfahrzeuge der Marke Sinotruk, die im Rahmen der Kooperation mit der Steyr Automotive GmbH in Österreich assembliert werden.</p>
+    <p class="imp-p">Tätigkeiten umfassen: Import und Vertrieb von Nutzfahrzeugen, Aufbau und Betreuung eines autorisierten Händler- und Servicenetzwerks, Ersatzteilversorgung sowie Kundendienst in den Märkten AT, CZ, SK und HU.</p>
+  </div>
+
+  <div class="imp-section">
+    <h2 class="imp-h2">Aufsichtsbehörde & Berufsrecht</h2>
+    <div class="imp-grid">
+      <div class="imp-cell">
+        <div class="imp-cell-l">Zuständige Behörde</div>
+        <div class="imp-cell-v">Bezirkshauptmannschaft Baden</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Kammer</div>
+        <div class="imp-cell-v">Wirtschaftskammer Niederösterreich (WKÖ)</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Berufsrecht</div>
+        <div class="imp-cell-v">Gewerbeordnung 1994 (GewO)</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Anwendbares Recht</div>
+        <div class="imp-cell-v">Österreichisches Recht</div>
+      </div>
+    </div>
+    <p class="imp-p" style="margin-top:16px;">Das anwendbare Berufsrecht kann unter <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">ris.bka.gv.at</a> abgerufen werden.</p>
+  </div>
+
+  <div class="imp-section">
+    <h2 class="imp-h2">Haftungsausschluss</h2>
+    <h3 class="imp-h3">Inhalt dieser Website</h3>
+    <p class="imp-p">Die NOVUS automotive group FlexCo bemüht sich, die Informationen auf dieser Website stets aktuell und korrekt zu halten. Dennoch kann keine Gewähr für die Richtigkeit, Vollständigkeit oder Aktualität der bereitgestellten Inhalte übernommen werden. Die Nutzung der Inhalte dieser Website erfolgt auf eigene Gefahr des Nutzers.</p>
+    <h3 class="imp-h3">Links zu externen Websites</h3>
+    <p class="imp-p">Diese Website enthält Links zu externen Websites Dritter. Auf deren Inhalte haben wir keinen Einfluss. Für die Inhalte verlinkter Seiten ist stets der jeweilige Betreiber verantwortlich. Zum Zeitpunkt der Verlinkung wurden die verlinkten Seiten auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+    <h3 class="imp-h3">Urheberrecht</h3>
+    <p class="imp-p">Die durch die Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem österreichischen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+  </div>
+
+  <div class="imp-section">
+    <h2 class="imp-h2">Grundlegende Richtung des Mediums</h2>
+    <p class="imp-p">Diese Website dient der Information über das Unternehmen NOVUS automotive group FlexCo, seine Produkte (Sinotruk SITRAK Nutzfahrzeuge), Dienstleistungen sowie das Händler- und Servicenetzwerk in Österreich, Tschechien, der Slowakei und Ungarn. Die Website richtet sich an gewerbliche Kunden, Flottenbetreiber, potenzielle Handelspartner sowie die allgemeine Öffentlichkeit.</p>
+    <div class="imp-note">
+      Für Anfragen zum Datenschutz wenden Sie sich bitte an: <a href="mailto:office@novustruck.com">office@novustruck.com</a><br>
+      Datenschutzerklärung: <a href="datenschutz.html">datenschutz.html</a>
+    </div>
+  </div>
+
+  <div class="imp-section">
+    <h2 class="imp-h2">Online-Streitbeilegung</h2>
+    <p class="imp-p">Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die unter folgendem Link erreichbar ist: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+    <p class="imp-p">Unsere E-Mail-Adresse finden Sie im Impressum oben. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+  </div>
+
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="height:44px;margin-bottom:20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" style="height:100%;width:auto;">
+          <text style="font-family:Georgia,'Times New Roman',serif;font-size:72px;font-weight:700;fill:#fff;" x="0" y="72">NOVUS</text>
+          <rect x="300" y="4" width="6" height="72" fill="#8b1a1a"/>
+          <rect x="310" y="4" width="6" height="72" fill="#8b1a1a"/>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#fff;" x="326" y="36">automotive</text>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#fff;" x="326" y="62">group</text>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;fill:rgba(255,255,255,.3);letter-spacing:3px;" x="2" y="104">THE POWER OF COMPETENCIES</text>
+        </svg>
+      </div>
+      <p class="f-tagline">The Power of Competencies.<br>Generalimporteur Sinotruk SITRAK<br>AT · CZ · SK · HU<br>Assembled in Austria · Steyr Automotive.</p>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Navigation</div>
+      <a href="index.html#models">Modelle / Models</a>
+      <a href="index.html#services">Service</a>
+      <a href="index.html#finder">Händlerfinder</a>
+      <a href="index.html#about">Unternehmen</a>
+      <a href="index.html#news">News</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Rechtliches</div>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Kontakt</div>
+      <a href="mailto:office@novustruck.com">office@novustruck.com</a>
+      <a>Trattnerring 1, 2435 Wienerherberg</a>
+      <a href="partner.html" style="margin-top:12px;color:rgba(255,255,255,.65);">Partner werden →</a>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <div class="f-copy">© 2026 NOVUS automotive group FlexCo · FN 678496 p · Alle Rechte vorbehalten.</div>
+  </div>
+</footer>
+
+<div id="cookie">
+  <p class="cookie-text">Diese Website verwendet ausschließlich technisch notwendige Cookies. Weitere Informationen: <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-btns">
+    <button class="ck-no" onclick="closeCookie(false)">Ablehnen</button>
+    <button class="ck-yes" onclick="closeCookie(true)">Akzeptieren</button>
+  </div>
+</div>
+
+<script>
+const mobileNav=document.getElementById('mobile-nav');
+const overlay=document.getElementById('overlay');
+function openMobile(){mobileNav.classList.add('open');overlay.classList.add('on');}
+function closeMobile(){mobileNav.classList.remove('open');overlay.classList.remove('on');}
+function closeCookie(ok){document.getElementById('cookie').classList.remove('show');localStorage.setItem('cookieConsent',ok?'y':'n');}
+if(!localStorage.getItem('cookieConsent'))setTimeout(()=>document.getElementById('cookie').classList.add('show'),1800);
+</script>
+</body>
+</html>

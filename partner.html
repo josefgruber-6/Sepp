@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner werden — NOVUS automotive group · SITRAK Händler & Service</title>
+<meta name="description" content="Werden Sie autorisierter SITRAK Händler oder Service-Partner der NOVUS automotive group in Österreich, Tschechien, der Slowakei oder Ungarn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2d5f7e;--blue-d:#1e4258;--blue-dd:#0d1e28;
+  --red:#8b1a1a;--red-d:#6e1515;
+  --white:#fff;--off:#f5f4f2;--ink:#111;
+  --gray:#6b7a82;--light:#e8e4df;
+  --nav-h:72px;
+  --ease-out:cubic-bezier(0.22,1,0.36,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;width:100%;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+
+.fade-up{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out);}
+.fade-up.in{opacity:1;transform:translateY(0);}
+.fade-up.d1{transition-delay:.1s;}.fade-up.d2{transition-delay:.2s;}.fade-up.d3{transition-delay:.3s;}.fade-up.d4{transition-delay:.4s;}
+
+/* ── NAV ── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;background:rgba(255,255,255,.97);
+  box-shadow:0 1px 0 rgba(0,0,0,.08);
+}
+.nav-logo{display:flex;align-items:center;}
+.nav-menu{display:flex;align-items:center;gap:0;}
+.nav-menu a{
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(0,0,0,.6);padding:10px 14px;transition:color .2s;white-space:nowrap;
+}
+.nav-menu a:hover{color:var(--ink);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-langs{display:flex;gap:2px;}
+.nl{background:none;border:none;padding:4px 6px;
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:1px;text-transform:uppercase;color:rgba(0,0,0,.3);transition:color .2s;cursor:pointer;}
+.nl.on,.nl:hover{color:var(--ink);}
+.nav-cta{
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  background:var(--red);color:#fff;padding:11px 20px;border:none;
+  transition:background .2s;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--red-d);}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px;}
+.nb{width:24px;height:2px;background:var(--ink);transition:all .3s;}
+
+/* ── MOBILE NAV ── */
+#mobile-nav{
+  position:fixed;top:0;right:0;bottom:0;z-index:950;
+  width:320px;background:var(--blue-dd);
+  transform:translateX(100%);transition:transform .4s var(--ease-out);
+  padding:100px 40px 60px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;
+}
+#mobile-nav.open{transform:translateX(0);}
+#mobile-nav a{
+  font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);
+  padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s;
+}
+#mobile-nav a:hover{color:#fff;}
+#overlay{position:fixed;inset:0;z-index:799;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .3s;}
+#overlay.on{opacity:1;pointer-events:auto;}
+
+/* ── PAGE HERO ── */
+.page-hero{
+  background:var(--blue-dd);padding:160px 48px 80px;
+  position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 80px);
+}
+.page-hero::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(to right,var(--red) 0%,var(--blue) 60%,transparent 100%);
+}
+.page-hero-inner{max-width:1320px;margin:0 auto;position:relative;z-index:1;}
+.page-tag{
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);
+  display:flex;align-items:center;gap:12px;margin-bottom:18px;
+}
+.page-tag::before{content:'';width:28px;height:2px;background:var(--red);}
+.page-h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(48px,7vw,100px);font-weight:900;
+  line-height:.92;letter-spacing:-1px;text-transform:uppercase;color:#fff;
+  max-width:700px;
+}
+.page-h1 em{font-style:italic;font-weight:400;color:rgba(255,255,255,.35);}
+.page-sub{
+  font-size:17px;font-weight:300;line-height:1.7;
+  color:rgba(255,255,255,.55);max-width:560px;margin-top:20px;
+}
+.hero-stats{display:flex;gap:48px;margin-top:48px;flex-wrap:wrap;}
+.hs{border-left:2px solid var(--red);padding-left:16px;}
+.hs-n{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:800;color:#fff;line-height:1;}
+.hs-l{font-size:10px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:4px;}
+
+/* ── SECTION UTILS ── */
+.wrap{max-width:1320px;margin:0 auto;padding:0 48px;}
+.sec{padding:80px 0;}
+.sec-tag{
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;color:var(--blue);
+  display:flex;align-items:center;gap:12px;margin-bottom:16px;
+}
+.sec-tag::before{content:'';width:28px;height:2px;background:var(--blue);}
+.sec-tag.rd{color:var(--red);}.sec-tag.rd::before{background:var(--red);}
+.sec-h{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(32px,4.5vw,58px);font-weight:800;
+  letter-spacing:-1px;line-height:.95;text-transform:uppercase;
+}
+.sec-h em{font-style:italic;font-weight:400;color:var(--blue);}
+.sec-h.wh{color:#fff;}.sec-h.wh em{color:rgba(255,255,255,.35);}
+.sec-p{font-size:16px;font-weight:300;line-height:1.85;color:var(--gray);}
+
+/* ── BENEFITS ── */
+#benefits{background:var(--off);padding:80px 0;}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--light);margin-top:60px;}
+.benefit{
+  background:var(--white);padding:48px 40px;
+  position:relative;overflow:hidden;transition:background .3s;
+}
+.benefit::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--blue);transform:scaleX(0);transform-origin:left;
+  transition:transform .4s var(--ease-out);
+}
+.benefit:hover{background:var(--off);}
+.benefit:hover::before{transform:scaleX(1);}
+.benefit-num{
+  font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:900;
+  color:rgba(0,0,0,.05);line-height:1;margin-bottom:16px;
+}
+.benefit-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--ink);margin-bottom:12px;
+}
+.benefit-body{font-size:13px;font-weight:300;line-height:1.75;color:var(--gray);}
+
+/* ── REQUIREMENTS ── */
+#requirements{background:var(--blue-dd);padding:80px 0;}
+.req-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:56px;}
+.req-list{display:flex;flex-direction:column;gap:2px;}
+.req-item{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);
+  padding:22px 24px;display:flex;gap:16px;align-items:flex-start;
+  transition:background .2s;
+}
+.req-item:hover{background:rgba(255,255,255,.08);}
+.req-check{
+  flex-shrink:0;width:24px;height:24px;background:var(--blue);
+  display:flex;align-items:center;justify-content:center;margin-top:1px;
+}
+.req-check svg{width:14px;height:14px;}
+.req-item-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.5px;color:#fff;margin-bottom:4px;
+}
+.req-item-text{font-size:12px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.6;}
+
+/* ── PROCESS ── */
+.process{margin-top:0;}
+.process-step{
+  display:flex;gap:24px;padding:28px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.process-step:last-child{border-bottom:none;}
+.ps-num{
+  flex-shrink:0;width:48px;height:48px;background:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:#fff;
+}
+.ps-body{}
+.ps-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.5px;color:#fff;margin-bottom:4px;
+}
+.ps-text{font-size:12px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.6;}
+.ps-badge{
+  display:inline-block;margin-top:8px;
+  font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:3px 10px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.4);
+}
+
+/* ── FORM ── */
+#application{background:var(--off);padding:80px 0;}
+.form-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:2px;background:var(--light);margin-top:60px;}
+.form-info{background:var(--blue-dd);padding:72px 60px;}
+.form-info-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,3.5vw,44px);
+  font-weight:800;text-transform:uppercase;letter-spacing:-1px;color:#fff;line-height:1;
+  margin-bottom:20px;
+}
+.form-info-title em{font-style:italic;font-weight:400;color:rgba(255,255,255,.35);}
+.form-info-body{font-size:14px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.5);margin-bottom:40px;}
+.form-contact-item{
+  padding:16px 18px;background:rgba(255,255,255,.05);border-left:2px solid var(--blue);
+  margin-bottom:2px;
+}
+.fci-l{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:3px;}
+.fci-v{font-size:13px;font-weight:300;color:rgba(255,255,255,.7);}
+.fci-v a{color:var(--blue);}
+
+.form-wrap{background:var(--white);padding:72px 60px;}
+.form-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.5px;color:var(--ink);margin-bottom:32px;
+}
+.fg{margin-bottom:16px;}
+.fg label{
+  display:block;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;color:rgba(0,0,0,.35);margin-bottom:8px;
+}
+.fg input,.fg select,.fg textarea{
+  width:100%;background:transparent;border:none;
+  border-bottom:1.5px solid rgba(0,0,0,.12);
+  color:var(--ink);padding:11px 0;
+  font-family:'Barlow',sans-serif;font-size:14px;font-weight:300;
+  outline:none;transition:border-color .2s;border-radius:0;-webkit-appearance:none;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-bottom-color:var(--blue);}
+.fg textarea{resize:none;height:100px;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.fg select option{background:#fff;}
+.radio-group{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px;}
+.radio-opt{
+  display:flex;align-items:center;gap:8px;cursor:pointer;
+  padding:10px 16px;border:1.5px solid rgba(0,0,0,.1);
+  font-size:13px;font-weight:400;color:var(--gray);
+  transition:all .2s;
+}
+.radio-opt input[type="radio"]{display:none;}
+.radio-opt.checked,.radio-opt:has(input:checked){
+  border-color:var(--blue);color:var(--ink);background:rgba(45,95,126,.06);
+}
+.submit-btn{
+  width:100%;margin-top:12px;background:var(--blue);border:none;
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;color:#fff;
+  padding:18px;transition:background .2s;
+}
+.submit-btn:hover{background:var(--blue-d);}
+.form-success{
+  display:none;background:rgba(45,95,126,.08);border:1px solid rgba(45,95,126,.25);
+  padding:16px 18px;margin-top:12px;font-size:13px;color:var(--blue);
+}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:80px 48px;border-top:3px solid var(--red);}
+.footer-grid{max-width:1320px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;}
+.f-logo{height:44px;margin-bottom:20px;}
+.f-logo svg{height:100%;width:auto;}
+.f-tagline{font-size:13px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.35);}
+.f-col-h{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px;
+}
+.f-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);padding:4px 0;transition:color .2s;}
+.f-col a:hover{color:#fff;}
+.footer-bar{
+  max-width:1320px;margin:56px auto 0;padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.07);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+}
+.f-copy{font-size:11px;color:rgba(255,255,255,.2);}
+
+/* ── COOKIE ── */
+#cookie{
+  position:fixed;bottom:0;left:0;right:0;z-index:950;
+  background:rgba(13,13,13,.98);backdrop-filter:blur(20px);
+  padding:20px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+  border-top:1px solid rgba(255,255,255,.08);
+  transform:translateY(100%);transition:transform .4s var(--ease-out);
+}
+#cookie.show{transform:translateY(0);}
+.cookie-text{font-size:12px;font-weight:300;color:rgba(255,255,255,.45);max-width:600px;}
+.cookie-text a{color:var(--blue);}
+.cookie-btns{display:flex;gap:8px;flex-shrink:0;}
+.ck-no{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  background:transparent;border:1px solid rgba(255,255,255,.2);
+  color:rgba(255,255,255,.5);padding:10px 18px;transition:all .2s;
+}
+.ck-no:hover{border-color:rgba(255,255,255,.5);color:#fff;}
+.ck-yes{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  background:var(--blue);color:#fff;border:none;padding:10px 18px;transition:background .2s;
+}
+.ck-yes:hover{background:var(--blue-d);}
+[data-lang]{display:none;}[data-lang].on{display:block;}
+span[data-lang]{display:none;}span[data-lang].on{display:inline;}
+
+@media(max-width:900px){
+  #nav{padding:0 20px;}
+  .nav-menu{display:none;}
+  .nav-burger{display:flex;}
+  .page-hero{padding:140px 24px 64px;}
+  .hero-stats{gap:28px;}
+  .wrap{padding:0 24px;}
+  .sec{padding:64px 0;}
+  .benefits-grid{grid-template-columns:1fr;}
+  .req-grid{grid-template-columns:1fr;gap:40px;}
+  .form-grid{grid-template-columns:1fr;}
+  .form-info,.form-wrap{padding:56px 28px;}
+  footer{padding:60px 24px;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
+  #cookie{padding:20px;flex-direction:column;}
+}
+@media(max-width:640px){
+  .footer-grid{grid-template-columns:1fr;}
+  .fg-row{grid-template-columns:1fr;}
+  .benefits-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-color" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" style="height:44px;width:auto;">
+      <text style="font-family:Georgia,'Times New Roman',serif;font-size:72px;font-weight:700;fill:#2d5f7e;" x="0" y="72">NOVUS</text>
+      <rect x="300" y="4" width="6" height="72" fill="#8b1a1a"/>
+      <rect x="310" y="4" width="6" height="72" fill="#8b1a1a"/>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#2d5f7e;" x="326" y="36">automotive</text>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#2d5f7e;" x="326" y="62">group</text>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;fill:#8b1a1a;letter-spacing:3px;" x="2" y="104">THE POWER OF COMPETENCIES</text>
+    </svg>
+  </a>
+  <div class="nav-menu">
+    <a href="index.html#models">Modelle</a>
+    <a href="index.html#services">Service</a>
+    <a href="index.html#finder">Händlerfinder</a>
+    <a href="index.html#about">Unternehmen</a>
+    <a href="index.html#news">News</a>
+    <a href="index.html#contact">Kontakt</a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-langs">
+      <button class="nl on" onclick="setLang('de')">DE</button>
+      <button class="nl" onclick="setLang('en')">EN</button>
+      <button class="nl" onclick="setLang('hu')">HU</button>
+      <button class="nl" onclick="setLang('cz')">CZ</button>
+      <button class="nl" onclick="setLang('sk')">SK</button>
+    </div>
+    <button class="nav-cta" onclick="document.getElementById('application').scrollIntoView({behavior:'smooth'})">
+      Jetzt bewerben
+    </button>
+  </div>
+  <button class="nav-burger" id="burger" onclick="openMobile()" aria-label="Menü öffnen">
+    <span class="nb"></span><span class="nb"></span><span class="nb"></span>
+  </button>
+</nav>
+
+<!-- Mobile nav -->
+<div id="mobile-nav">
+  <a href="index.html#models" onclick="closeMobile()">Modelle</a>
+  <a href="index.html#services" onclick="closeMobile()">Service</a>
+  <a href="index.html#finder" onclick="closeMobile()">Händlerfinder</a>
+  <a href="index.html#about" onclick="closeMobile()">Unternehmen</a>
+  <a href="index.html#news" onclick="closeMobile()">News</a>
+  <a href="index.html#contact" onclick="closeMobile()">Kontakt</a>
+  <a href="partner.html" onclick="closeMobile()" style="color:#fff;margin-top:20px;border-top:1px solid rgba(255,255,255,.15);padding-top:20px;">Partner werden ↗</a>
+</div>
+<div id="overlay" onclick="closeMobile()"></div>
+
+<!-- ══ PAGE HERO ══ -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-tag">NOVUS automotive group · Partnerprogramm</div>
+    <h1 class="page-h1">Partner<br><em>werden.</em></h1>
+    <p class="page-sub">
+      <span data-lang="de" class="on">Werden Sie autorisierter SITRAK Händler oder Service-Partner — und profitieren Sie als Erster von einem der stärksten Nutzfahrzeug-Angebote Europas.</span>
+      <span data-lang="en">Become an authorised SITRAK dealer or service partner — and be among the first to benefit from one of Europe's strongest commercial vehicle offerings.</span>
+      <span data-lang="hu">Legyen engedélyezett SITRAK kereskedő vagy szervizpartner, és profitáljon Európa egyik legerősebb haszongépjármű-ajánlatából.</span>
+      <span data-lang="cz">Staňte se autorizovaným dealerem nebo servisním partnerem SITRAK a jako jeden z prvních profitujte z jedné z nejsilnějších nabídek užitkových vozidel v Evropě.</span>
+      <span data-lang="sk">Staňte sa autorizovaným predajcom alebo servisným partnerom SITRAK a ako jeden z prvých profitujte z jednej z najsilnejších ponúk úžitkových vozidiel v Európe.</span>
+    </p>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-n">4</div><div class="hs-l">Märkte · AT CZ SK HU</div></div>
+      <div class="hs"><div class="hs-n">5</div><div class="hs-l">Modelle verfügbar</div></div>
+      <div class="hs"><div class="hs-n">2026</div><div class="hs-l">Netzwerkaufbau startet</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BENEFITS ══ -->
+<section id="benefits">
+  <div class="wrap">
+    <div class="sec-tag fade-up">Ihre Vorteile als Partner</div>
+    <h2 class="sec-h fade-up d1">Warum <em>SITRAK</em><br>Partner werden?</h2>
+    <p class="sec-p fade-up d2" style="max-width:600px;margin-top:16px;">Als autorisierter NOVUS Partner erhalten Sie exklusiven Zugang zu einem der wachstumsstärksten Nutzfahrzeugsegmente in Mitteleuropa.</p>
+  </div>
+  <div class="wrap" style="padding-top:0;">
+    <div class="benefits-grid">
+      <div class="benefit fade-up">
+        <div class="benefit-num">01</div>
+        <div class="benefit-title">Hohes Margenpotenzial</div>
+        <div class="benefit-body">SITRAK Fahrzeuge sind im Vergleich zu europäischen Wettbewerbern deutlich wettbewerbsfähiger bepreist — bei hoher Technologiequalität. Das schafft überdurchschnittliche Deckungsbeiträge für Händler und Servicebetriebe.</div>
+      </div>
+      <div class="benefit fade-up d1">
+        <div class="benefit-num">02</div>
+        <div class="benefit-title">Vollständiger Marketing-Support</div>
+        <div class="benefit-body">NOVUS stellt Ihnen alle Verkaufsunterlagen, digitalen Assets und Kampagnenmaterialien in allen fünf Sprachen (DE/EN/HU/CZ/SK) zur Verfügung. Bundesweite Medienpräsenz stärkt Ihre lokale Marke.</div>
+      </div>
+      <div class="benefit fade-up d2">
+        <div class="benefit-num">03</div>
+        <div class="benefit-title">Technisches Training & Zertifizierung</div>
+        <div class="benefit-body">Umfassendes Ausbildungsprogramm für Ihre Techniker durch NOVUS-zertifizierte Trainer. Zugang zur Sinotruk-Technikdatenbank und laufende Updates bei neuen Modellen und Softwareversionen.</div>
+      </div>
+      <div class="benefit fade-up">
+        <div class="benefit-num">04</div>
+        <div class="benefit-title">Gesicherte Ersatzteilversorgung</div>
+        <div class="benefit-body">Zentrallager in Österreich mit schnellen Lieferzeiten in alle Partnerländer. Priority-Zugang für Servicepartner mit garantierten Lieferzeiten von 24–48 Stunden für Standardteile.</div>
+      </div>
+      <div class="benefit fade-up d1">
+        <div class="benefit-num">05</div>
+        <div class="benefit-title">Gebietsschutz</div>
+        <div class="benefit-body">Jeder Partner erhält ein exklusives Verkaufs- und Servicegebiet. Keine Überschneidungen, keine Konkurrenz innerhalb des NOVUS Netzwerks — Ihr Markt gehört Ihnen.</div>
+      </div>
+      <div class="benefit fade-up d2">
+        <div class="benefit-num">06</div>
+        <div class="benefit-title">Elektro-Offensive ab sofort</div>
+        <div class="benefit-body">Als einer der wenigen Generalimporteure bieten wir bereits jetzt den SITRAK C7H EV — ein batterieelektrischer 18-Tonner. Positionieren Sie Ihr Unternehmen als Vorreiter in der E-Mobilität im Nutzfahrzeugbereich.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REQUIREMENTS & PROCESS ══ -->
+<section id="requirements">
+  <div class="wrap">
+    <div class="req-grid">
+      <div>
+        <div class="sec-tag lt fade-up" style="color:rgba(255,255,255,.35);"><span style="width:28px;height:2px;background:rgba(255,255,255,.2);display:inline-block;"></span>&nbsp;&nbsp;Voraussetzungen</div>
+        <h2 class="sec-h wh fade-up d1">Was Sie<br><em>mitbringen.</em></h2>
+        <p class="sec-p fade-up d2" style="color:rgba(255,255,255,.45);margin-top:16px;max-width:480px;">Wir suchen starke, engagierte Partner — keine Konzerne. Ob etablierter LKW-Händler oder wachstumsorientierte Werkstätte.</p>
+        <div class="req-list" style="margin-top:40px;">
+          <div class="req-item fade-up">
+            <div class="req-check">
+              <svg viewBox="0 0 14 14" fill="none"><polyline points="2,7 6,11 12,3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="req-item-title">Gewerbliche Zulassung</div>
+              <div class="req-item-text">KFZ-Händler- oder Werkstättenkonzession (oder gleichwertiges in CZ, SK, HU) sowie aufrechtes Gewerbe im Nutzfahrzeugbereich.</div>
+            </div>
+          </div>
+          <div class="req-item fade-up d1">
+            <div class="req-check">
+              <svg viewBox="0 0 14 14" fill="none"><polyline points="2,7 6,11 12,3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="req-item-title">Ausstellungs- & Servicefläche</div>
+              <div class="req-item-text">Geeignete Ausstellungsfläche für mindestens 2–3 Fahrzeuge sowie eine vollständig ausgestattete Werkstätte für Nutzfahrzeuge.</div>
+            </div>
+          </div>
+          <div class="req-item fade-up d2">
+            <div class="req-check">
+              <svg viewBox="0 0 14 14" fill="none"><polyline points="2,7 6,11 12,3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="req-item-title">Technisch geschultes Personal</div>
+              <div class="req-item-text">Mindestens ein Techniker mit Nutzfahrzeug-Erfahrung, der das NOVUS Zertifizierungsprogramm erfolgreich absolvieren kann.</div>
+            </div>
+          </div>
+          <div class="req-item fade-up d3">
+            <div class="req-check">
+              <svg viewBox="0 0 14 14" fill="none"><polyline points="2,7 6,11 12,3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="req-item-title">Regionale Präsenz & Marktkenntnis</div>
+              <div class="req-item-text">Etabliertes Netzwerk in Ihrer Region sowie Kenntnisse des lokalen Nutzfahrzeugmarkts und der wichtigsten Flottenkunden.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="sec-tag lt fade-up" style="color:rgba(255,255,255,.35);"><span style="width:28px;height:2px;background:rgba(255,255,255,.2);display:inline-block;"></span>&nbsp;&nbsp;Bewerbungsprozess</div>
+        <h2 class="sec-h wh fade-up d1">In <em>3 Schritten</em><br>zum Partner.</h2>
+        <div class="process" style="margin-top:40px;">
+          <div class="process-step fade-up">
+            <div class="ps-num">1</div>
+            <div class="ps-body">
+              <div class="ps-title">Bewerbung einreichen</div>
+              <div class="ps-text">Füllen Sie das Bewerbungsformular aus und senden Sie es ab. Wir melden uns innerhalb von 2 Werktagen für ein erstes Gespräch.</div>
+              <div class="ps-badge">→ 2 Werktage</div>
+            </div>
+          </div>
+          <div class="process-step fade-up d1">
+            <div class="ps-num">2</div>
+            <div class="ps-body">
+              <div class="ps-title">Erstgespräch & Standortprüfung</div>
+              <div class="ps-text">Persönliches Kennenlernen mit dem NOVUS-Team, Standortbesichtigung und gemeinsame Bewertung der Rahmenbedingungen.</div>
+              <div class="ps-badge">→ 1–2 Wochen</div>
+            </div>
+          </div>
+          <div class="process-step fade-up d2">
+            <div class="ps-num">3</div>
+            <div class="ps-body">
+              <div class="ps-title">Partnervertrag & Onboarding</div>
+              <div class="ps-text">Unterzeichnung des Partnervertrags, technisches Training, Erstausstattung mit Marketingmaterialien und Aufnahme in das NOVUS Netzwerk.</div>
+              <div class="ps-badge">→ Abschluss in 4–6 Wochen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ APPLICATION FORM ══ -->
+<section id="application">
+  <div class="wrap">
+    <div class="sec-tag rd fade-up">Partnerbewerbung</div>
+    <h2 class="sec-h fade-up d1">Jetzt <em>bewerben.</em></h2>
+    <p class="sec-p fade-up d2" style="max-width:600px;margin-top:16px;">Alle mit * markierten Felder sind Pflichtfelder. Wir behandeln Ihre Daten streng vertraulich.</p>
+  </div>
+  <div class="wrap" style="padding-top:0;">
+    <div class="form-grid">
+      <div class="form-info fade-up">
+        <div>
+          <div class="form-info-title">Ihr direkter<br><em>Ansprechpartner.</em></div>
+          <div class="form-info-body">Für Rückfragen zur Partnerschaft stehen wir Ihnen gerne persönlich zur Verfügung.</div>
+          <div class="form-contact-item">
+            <div class="fci-l">E-Mail</div>
+            <div class="fci-v"><a href="mailto:partner@novustruck.com">partner@novustruck.com</a></div>
+          </div>
+          <div class="form-contact-item">
+            <div class="fci-l">Adresse</div>
+            <div class="fci-v">Trattnerring 1<br>2435 Wienerherberg, Österreich</div>
+          </div>
+          <div class="form-contact-item">
+            <div class="fci-l">Allgemein</div>
+            <div class="fci-v"><a href="mailto:office@novustruck.com">office@novustruck.com</a></div>
+          </div>
+        </div>
+        <div style="margin-top:40px;padding:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;">Aktuelle Märkte</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 12px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);">🇦🇹 Österreich</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 12px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);">🇨🇿 Tschechien</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 12px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);">🇸🇰 Slowakei</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;padding:6px 12px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);">🇭🇺 Ungarn</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-wrap fade-up d1">
+        <div class="form-title">Bewerbungsformular</div>
+        <form id="partner-form" onsubmit="submitForm(event)">
+          <div class="fg-row">
+            <div class="fg">
+              <label>Firmenname *</label>
+              <input type="text" name="company" required placeholder="Muster GmbH">
+            </div>
+            <div class="fg">
+              <label>Ansprechpartner *</label>
+              <input type="text" name="contact" required placeholder="Vor- und Nachname">
+            </div>
+          </div>
+          <div class="fg-row">
+            <div class="fg">
+              <label>Funktion / Rolle</label>
+              <input type="text" name="role" placeholder="z.B. Geschäftsführer">
+            </div>
+            <div class="fg">
+              <label>Land *</label>
+              <select name="country" required>
+                <option value="">— Land wählen —</option>
+                <option>Österreich (AT)</option>
+                <option>Tschechien (CZ)</option>
+                <option>Slowakei (SK)</option>
+                <option>Ungarn (HU)</option>
+              </select>
+            </div>
+          </div>
+          <div class="fg-row">
+            <div class="fg">
+              <label>Stadt / Ort *</label>
+              <input type="text" name="city" required placeholder="Wien">
+            </div>
+            <div class="fg">
+              <label>Telefon *</label>
+              <input type="tel" name="phone" required placeholder="+43 ...">
+            </div>
+          </div>
+          <div class="fg">
+            <label>E-Mail *</label>
+            <input type="email" name="email" required placeholder="office@firma.com">
+          </div>
+          <div class="fg">
+            <label>Partnerschaftstyp *</label>
+            <div class="radio-group">
+              <label class="radio-opt" onclick="this.classList.toggle('checked')">
+                <input type="radio" name="type" value="dealer"> Händler
+              </label>
+              <label class="radio-opt" onclick="this.classList.toggle('checked')">
+                <input type="radio" name="type" value="service"> Service-Werkstätte
+              </label>
+              <label class="radio-opt" onclick="this.classList.toggle('checked')">
+                <input type="radio" name="type" value="both"> Händler & Service
+              </label>
+            </div>
+          </div>
+          <div class="fg-row">
+            <div class="fg">
+              <label>Betriebsfläche (ca. m²)</label>
+              <input type="text" name="area" placeholder="z.B. 2.000 m²">
+            </div>
+            <div class="fg">
+              <label>Erfahrung Nutzfahrzeuge</label>
+              <select name="experience">
+                <option value="">— bitte wählen —</option>
+                <option>Keine (Quereinstieg)</option>
+                <option>1–3 Jahre</option>
+                <option>3–10 Jahre</option>
+                <option>Über 10 Jahre</option>
+              </select>
+            </div>
+          </div>
+          <div class="fg">
+            <label>Anmerkungen / Fragen</label>
+            <textarea name="message" placeholder="Weitere Informationen zu Ihrem Betrieb, aktuelle Marken, Besonderheiten ..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Bewerbung absenden →</button>
+          <div class="form-success" id="form-success">
+            ✓ &nbsp;Vielen Dank! Ihre Bewerbung wurde eingegangen. Wir melden uns innerhalb von 2 Werktagen.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="f-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" style="height:100%;width:auto;">
+          <text style="font-family:Georgia,'Times New Roman',serif;font-size:72px;font-weight:700;fill:#fff;" x="0" y="72">NOVUS</text>
+          <rect x="300" y="4" width="6" height="72" fill="#8b1a1a"/>
+          <rect x="310" y="4" width="6" height="72" fill="#8b1a1a"/>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#fff;" x="326" y="36">automotive</text>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#fff;" x="326" y="62">group</text>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;fill:rgba(255,255,255,.3);letter-spacing:3px;" x="2" y="104">THE POWER OF COMPETENCIES</text>
+        </svg>
+      </div>
+      <p class="f-tagline">The Power of Competencies.<br>Generalimporteur Sinotruk SITRAK<br>AT · CZ · SK · HU<br>Assembled in Austria · Steyr Automotive.</p>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Navigation</div>
+      <a href="index.html#models">Modelle / Models</a>
+      <a href="index.html#services">Service</a>
+      <a href="index.html#finder">Händlerfinder</a>
+      <a href="index.html#about">Unternehmen</a>
+      <a href="index.html#news">News</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Rechtliches</div>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Kontakt</div>
+      <a href="mailto:office@novustruck.com">office@novustruck.com</a>
+      <a>Trattnerring 1, 2435 Wienerherberg</a>
+      <a href="partner.html" style="margin-top:12px;color:rgba(255,255,255,.65);">Partner werden →</a>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <div class="f-copy">© 2026 NOVUS automotive group FlexCo · FN 678496 p · Alle Rechte vorbehalten.</div>
+    <div style="display:flex;gap:2px;">
+      <button class="nl on" onclick="setLang('de')">DE</button>
+      <button class="nl" onclick="setLang('en')">EN</button>
+      <button class="nl" onclick="setLang('hu')">HU</button>
+      <button class="nl" onclick="setLang('cz')">CZ</button>
+      <button class="nl" onclick="setLang('sk')">SK</button>
+    </div>
+  </div>
+</footer>
+
+<!-- Cookie -->
+<div id="cookie">
+  <p class="cookie-text">Diese Website verwendet ausschließlich technisch notwendige Cookies. Weitere Informationen in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-btns">
+    <button class="ck-no" onclick="closeCookie(false)">Ablehnen</button>
+    <button class="ck-yes" onclick="closeCookie(true)">Akzeptieren</button>
+  </div>
+</div>
+
+<script>
+function setLang(l){
+  document.querySelectorAll('.nl').forEach(b=>b.classList.toggle('on',b.textContent.trim().toUpperCase()===l.toUpperCase()));
+  document.querySelectorAll('[data-lang]').forEach(el=>el.classList.toggle('on',el.getAttribute('data-lang')===l));
+}
+const mobileNav=document.getElementById('mobile-nav');
+const overlay=document.getElementById('overlay');
+function openMobile(){mobileNav.classList.add('open');overlay.classList.add('on');}
+function closeMobile(){mobileNav.classList.remove('open');overlay.classList.remove('on');}
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+document.querySelectorAll('.radio-opt').forEach(opt=>{
+  opt.addEventListener('click',()=>{
+    document.querySelectorAll('.radio-opt').forEach(o=>o.classList.remove('checked'));
+    opt.classList.add('checked');
+  });
+});
+function submitForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.submit-btn');
+  btn.textContent='Wird gesendet …';btn.disabled=true;
+  setTimeout(()=>{
+    document.getElementById('form-success').style.display='block';
+    btn.style.display='none';
+    e.target.reset();
+    document.querySelectorAll('.radio-opt').forEach(o=>o.classList.remove('checked'));
+  },900);
+}
+function closeCookie(ok){document.getElementById('cookie').classList.remove('show');localStorage.setItem('cookieConsent',ok?'y':'n');}
+if(!localStorage.getItem('cookieConsent'))setTimeout(()=>document.getElementById('cookie').classList.add('show'),1800);
+</script>
+</body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sinotruk Produktion startet bei Steyr Automotive — NOVUS automotive group</title>
+<meta name="description" content="Steyr Automotive hat am 03. März 2026 das erste Sinotruk SITRAK Fahrzeug in Österreich fertiggestellt. Assembled in Austria — Diesel und vollelektrische LKW für die EMEA-Region.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2d5f7e;--blue-d:#1e4258;--blue-dd:#0d1e28;
+  --red:#8b1a1a;--white:#fff;--off:#f5f4f2;--ink:#111;
+  --gray:#6b7a82;--light:#e8e4df;--nav-h:72px;
+  --ease-out:cubic-bezier(0.22,1,0.36,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;width:100%;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+
+.fade-up{opacity:0;transform:translateY(32px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);}
+.fade-up.in{opacity:1;transform:translateY(0);}
+
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;background:rgba(255,255,255,.97);
+  box-shadow:0 1px 0 rgba(0,0,0,.08);
+}
+.nav-menu{display:flex;align-items:center;gap:0;}
+.nav-menu a{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(0,0,0,.6);padding:10px 14px;transition:color .2s;white-space:nowrap;}
+.nav-menu a:hover{color:var(--ink);}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--red);color:#fff;padding:11px 20px;border:none;transition:background .2s;}
+.nav-cta:hover{background:#6e1515;}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px;}
+.nb{width:24px;height:2px;background:var(--ink);}
+
+#mobile-nav{position:fixed;top:0;right:0;bottom:0;z-index:950;width:320px;background:var(--blue-dd);transform:translateX(100%);transition:transform .4s var(--ease-out);padding:100px 40px 60px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;}
+#mobile-nav.open{transform:translateX(0);}
+#mobile-nav a{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s;}
+#mobile-nav a:hover{color:#fff;}
+#overlay{position:fixed;inset:0;z-index:799;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .3s;}
+#overlay.on{opacity:1;pointer-events:auto;}
+
+/* ── ARTICLE HERO ── */
+.article-hero{
+  background:var(--blue-dd);
+  padding:140px 48px 72px;
+  position:relative;overflow:hidden;
+}
+.article-hero::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.015) 0,rgba(255,255,255,.015) 1px,transparent 1px,transparent 80px);
+}
+.article-hero::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(to right,var(--red),var(--blue) 60%,transparent 100%);
+}
+.article-hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1;}
+.breadcrumb{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:8px;margin-bottom:24px;}
+.breadcrumb a{color:rgba(255,255,255,.5);transition:color .2s;}
+.breadcrumb a:hover{color:#fff;}
+.article-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:var(--blue);color:#fff;padding:5px 14px;margin-bottom:20px;}
+.article-h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px,5.5vw,72px);font-weight:900;
+  letter-spacing:-1px;line-height:.95;text-transform:uppercase;color:#fff;
+}
+.article-h1 em{font-style:italic;font-weight:400;color:rgba(255,255,255,.4);}
+.article-meta{display:flex;align-items:center;gap:24px;margin-top:24px;flex-wrap:wrap;}
+.article-date{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.article-author{font-size:12px;font-weight:300;color:rgba(255,255,255,.35);}
+.article-share{display:flex;gap:8px;align-items:center;margin-left:auto;}
+.share-label{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.share-btn{width:32px;height:32px;border:1px solid rgba(255,255,255,.15);background:none;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:14px;transition:all .2s;}
+.share-btn:hover{border-color:rgba(255,255,255,.4);color:#fff;}
+
+/* ── KEY IMAGE ── */
+.key-image{background:var(--off);}
+.key-image-inner{max-width:1100px;margin:0 auto;}
+.key-image-placeholder{
+  height:480px;background:linear-gradient(135deg,var(--blue-dd) 0%,var(--blue-d) 50%,var(--blue) 100%);
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+}
+.kip-text{
+  font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,8vw,100px);
+  font-weight:900;letter-spacing:-2px;text-transform:uppercase;
+  color:rgba(255,255,255,.08);text-align:center;
+  position:absolute;
+}
+.kip-label{
+  position:absolute;bottom:24px;right:24px;
+  font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);
+  background:rgba(0,0,0,.4);padding:6px 12px;
+}
+.kip-badge{
+  position:absolute;top:24px;left:24px;
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  background:var(--red);color:#fff;padding:6px 16px;
+}
+.kip-truck{
+  font-size:80px;z-index:1;
+}
+
+/* ── ARTICLE BODY ── */
+.article-layout{max-width:1100px;margin:0 auto;padding:72px 48px;display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start;}
+.article-content{}
+.article-intro{
+  font-size:19px;font-weight:300;line-height:1.85;color:#333;
+  margin-bottom:40px;padding-bottom:32px;border-bottom:2px solid var(--light);
+}
+.article-body h2{
+  font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.3px;color:var(--ink);
+  margin:44px 0 16px;
+}
+.article-body h3{
+  font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.3px;color:var(--blue);
+  margin:28px 0 10px;
+}
+.article-body p{font-size:15px;font-weight:300;line-height:1.9;color:#444;margin-bottom:18px;}
+.article-body p:last-child{margin-bottom:0;}
+.article-body strong{font-weight:600;color:var(--ink);}
+.article-body a{color:var(--blue);border-bottom:1px solid rgba(45,95,126,.3);}
+.article-body a:hover{border-color:var(--blue);}
+.article-body ul{margin:16px 0 20px 20px;}
+.article-body ul li{font-size:15px;font-weight:300;line-height:1.7;color:#444;margin-bottom:8px;}
+.article-pullquote{
+  margin:40px 0;padding:28px 32px;
+  background:var(--blue-dd);
+  border-left:4px solid var(--blue);
+}
+.pullquote-text{
+  font-family:'Barlow Condensed',sans-serif;font-size:clamp(18px,2.5vw,24px);
+  font-weight:600;font-style:italic;color:rgba(255,255,255,.75);
+  line-height:1.45;margin-bottom:12px;
+}
+.pullquote-cite{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);
+}
+.article-facts{
+  background:var(--off);padding:28px 32px;margin:36px 0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:3px solid var(--red);
+}
+.af{padding:16px;border-right:1px solid var(--light);text-align:center;}
+.af:last-child{border-right:none;}
+.af-n{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:var(--blue);line-height:1;}
+.af-l{font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-top:4px;}
+
+/* ── SIDEBAR ── */
+.article-sidebar{position:sticky;top:calc(var(--nav-h) + 24px);}
+.sidebar-block{background:var(--off);padding:28px;margin-bottom:16px;}
+.sidebar-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(0,0,0,.3);margin-bottom:20px;}
+.sidebar-facts-item{padding:12px 0;border-bottom:1px solid var(--light);display:flex;justify-content:space-between;align-items:baseline;gap:8px;}
+.sidebar-facts-item:last-child{border-bottom:none;}
+.sfi-l{font-size:12px;font-weight:300;color:var(--gray);}
+.sfi-v{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--ink);text-align:right;}
+.sidebar-cta{background:var(--blue);padding:28px;}
+.sidebar-cta-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;text-transform:uppercase;letter-spacing:-.3px;color:#fff;margin-bottom:10px;}
+.sidebar-cta-body{font-size:12px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:20px;}
+.sidebar-cta-btn{
+  display:block;text-align:center;
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  background:#fff;color:var(--ink);padding:14px;transition:background .2s;
+}
+.sidebar-cta-btn:hover{background:var(--off);}
+.sidebar-cta-btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.3);color:#fff;margin-top:8px;}
+.sidebar-cta-btn.ghost:hover{background:rgba(255,255,255,.1);}
+
+/* ── RELATED ARTICLES ── */
+.related{background:var(--off);padding:72px 0;border-top:2px solid var(--light);}
+.related-inner{max-width:1100px;margin:0 auto;padding:0 48px;}
+.related-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.related-title::before{content:'';width:28px;height:2px;background:var(--blue);}
+.related-h{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,48px);font-weight:800;letter-spacing:-1px;text-transform:uppercase;color:var(--ink);margin-bottom:40px;}
+.related-h em{font-style:italic;font-weight:400;color:var(--blue);}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--light);}
+.rel-card{background:var(--white);overflow:hidden;transition:background .2s;}
+.rel-card:hover{background:var(--off);}
+.rel-card-img{height:200px;background:var(--blue-dd);position:relative;overflow:hidden;}
+.rel-card-img-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:48px;}
+.rel-card-body{padding:24px;}
+.rel-tag{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;display:inline-block;padding:3px 10px;margin-bottom:10px;}
+.rel-tag.blue{background:var(--blue);color:#fff;}
+.rel-tag.red{background:var(--red);color:#fff;}
+.rel-title{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:-.2px;color:var(--ink);line-height:1.2;margin-bottom:8px;}
+.rel-text{font-size:12px;font-weight:300;color:var(--gray);line-height:1.6;margin-bottom:14px;}
+.rel-link{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:6px;transition:gap .2s;}
+.rel-link:hover{gap:10px;}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:80px 48px;border-top:3px solid var(--red);}
+.footer-grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;}
+.f-col-h{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px;}
+.f-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);padding:4px 0;transition:color .2s;}
+.f-col a:hover{color:#fff;}
+.f-tagline{font-size:13px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.35);}
+.footer-bar{max-width:1320px;margin:56px auto 0;padding-top:28px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.f-copy{font-size:11px;color:rgba(255,255,255,.2);}
+
+#cookie{position:fixed;bottom:0;left:0;right:0;z-index:950;background:rgba(13,13,13,.98);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid rgba(255,255,255,.08);transform:translateY(100%);transition:transform .4s var(--ease-out);}
+#cookie.show{transform:translateY(0);}
+.cookie-text{font-size:12px;font-weight:300;color:rgba(255,255,255,.45);max-width:600px;}
+.cookie-text a{color:var(--blue);}
+.cookie-btns{display:flex;gap:8px;flex-shrink:0;}
+.ck-no{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);padding:10px 18px;transition:all .2s;}
+.ck-no:hover{border-color:rgba(255,255,255,.5);color:#fff;}
+.ck-yes{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--blue);color:#fff;border:none;padding:10px 18px;transition:background .2s;}
+.ck-yes:hover{background:var(--blue-d);}
+
+@media(max-width:1000px){
+  .article-layout{grid-template-columns:1fr;gap:40px;}
+  .article-sidebar{position:static;}
+}
+@media(max-width:900px){
+  #nav{padding:0 20px;}
+  .nav-menu{display:none;}
+  .nav-burger{display:flex;}
+  .article-hero{padding:120px 24px 56px;}
+  .article-layout{padding:56px 24px;}
+  .related-inner{padding:0 24px;}
+  .related-grid{grid-template-columns:1fr;}
+  footer{padding:60px 24px;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
+  #cookie{padding:20px;flex-direction:column;}
+  .article-facts{grid-template-columns:1fr 1fr;}
+  .key-image-placeholder{height:280px;}
+}
+@media(max-width:640px){
+  .footer-grid{grid-template-columns:1fr;}
+  .article-facts{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" style="display:flex;align-items:center;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" style="height:44px;width:auto;">
+      <text style="font-family:Georgia,'Times New Roman',serif;font-size:72px;font-weight:700;fill:#2d5f7e;" x="0" y="72">NOVUS</text>
+      <rect x="300" y="4" width="6" height="72" fill="#8b1a1a"/>
+      <rect x="310" y="4" width="6" height="72" fill="#8b1a1a"/>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#2d5f7e;" x="326" y="36">automotive</text>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#2d5f7e;" x="326" y="62">group</text>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;fill:#8b1a1a;letter-spacing:3px;" x="2" y="104">THE POWER OF COMPETENCIES</text>
+    </svg>
+  </a>
+  <div class="nav-menu">
+    <a href="index.html#models">Modelle</a>
+    <a href="index.html#services">Service</a>
+    <a href="index.html#finder">Händlerfinder</a>
+    <a href="index.html#about">Unternehmen</a>
+    <a href="index.html#news">News</a>
+    <a href="index.html#contact">Kontakt</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <a href="partner.html" class="nav-cta">Partner werden</a>
+  </div>
+  <button class="nav-burger" onclick="openMobile()" aria-label="Menü öffnen">
+    <span class="nb"></span><span class="nb"></span><span class="nb"></span>
+  </button>
+</nav>
+
+<div id="mobile-nav">
+  <a href="index.html#models" onclick="closeMobile()">Modelle</a>
+  <a href="index.html#services" onclick="closeMobile()">Service</a>
+  <a href="index.html#finder" onclick="closeMobile()">Händlerfinder</a>
+  <a href="index.html#about" onclick="closeMobile()">Unternehmen</a>
+  <a href="index.html#news" onclick="closeMobile()">News</a>
+  <a href="index.html#contact" onclick="closeMobile()">Kontakt</a>
+  <a href="partner.html" onclick="closeMobile()" style="color:#fff;margin-top:20px;border-top:1px solid rgba(255,255,255,.15);padding-top:20px;">Partner werden →</a>
+</div>
+<div id="overlay" onclick="closeMobile()"></div>
+
+<!-- ══ ARTICLE HERO ══ -->
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">NOVUS automotive group</a>
+      <span>›</span>
+      <a href="index.html#news">News</a>
+      <span>›</span>
+      <span>Produktion Steyr Automotive</span>
+    </div>
+    <div class="article-tag">Produktion · Assembled in Austria</div>
+    <h1 class="article-h1">Sinotruk Produktion<br>startet bei <em>Steyr Automotive.</em></h1>
+    <div class="article-meta">
+      <span class="article-date">03. März 2026</span>
+      <span class="article-author">NOVUS automotive group · Pressemeldung</span>
+      <div class="article-share">
+        <span class="share-label">Teilen</span>
+        <button class="share-btn" onclick="copyLink()" title="Link kopieren">🔗</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ KEY IMAGE ══ -->
+<div class="key-image">
+  <div class="key-image-inner">
+    <div class="key-image-placeholder">
+      <div class="kip-text">SITRAK</div>
+      <div class="kip-truck">🚛</div>
+      <div class="kip-badge">Assembled in Austria · #001</div>
+      <div class="kip-label">Erstes Fahrzeug · Steyr, 03. März 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ARTICLE BODY ══ -->
+<div class="article-layout">
+  <div class="article-content">
+
+    <p class="article-intro">
+      Am 03. März 2026 rollte das erste Sinotruk SITRAK Fahrzeug vom Band der Steyr Automotive GmbH in Steyr, Österreich. Ein historischer Moment: Zum ersten Mal werden chinesische Nutzfahrzeuge der Premium-Klasse auf österreichischem Boden assembliert — für den europäischen Markt.
+    </p>
+
+    <div class="article-body">
+
+      <h2>Meilenstein für die österreichische Nutzfahrzeugindustrie</h2>
+      <p>Die Zusammenarbeit zwischen der NOVUS automotive group und Steyr Automotive markiert den Beginn einer neuen Ära im europäischen Nutzfahrzeugmarkt. Mit dem erfolgreichen Start der Assembling-Linie in Steyr wird die Produktionsstrategie "Assembled in Austria" zur Realität — und positioniert Sinotruk SITRAK als ernstzunehmende Alternative zu etablierten europäischen Herstellern.</p>
+      <p>Das erste fertiggestellte Fahrzeug ist ein <strong>SITRAK C7H 4×2</strong> mit 460 PS-Dieselantrieb und Euro-VI-Zertifizierung. Es handelt sich um einen 18-Tonner für den Fernverkehr, ausgerüstet mit dem neuesten SITRAK-Fahrerassistenz-System der Generation 2026.</p>
+
+      <div class="article-facts">
+        <div class="af"><div class="af-n">03.03.26</div><div class="af-l">Erstes Fahrzeug fertig</div></div>
+        <div class="af"><div class="af-n">460 PS</div><div class="af-l">SITRAK C7H Diesel</div></div>
+        <div class="af"><div class="af-n">Euro VI</div><div class="af-l">Emissionsklasse</div></div>
+      </div>
+
+      <h2>Assembled in Austria — Was das bedeutet</h2>
+      <p>Das Konzept "Assembled in Austria" ist mehr als ein Marketingversprechen. Die Fahrzeuge werden in Steyr nach österreichischen und europäischen Qualitätsstandards montiert, geprüft und ausgeliefert. Konkret bedeutet das:</p>
+      <ul>
+        <li><strong>Lokale Qualitätskontrolle:</strong> Jedes Fahrzeug durchläuft einen umfassenden Prüfprozess nach österreichischen Werksnormen.</li>
+        <li><strong>EU-Konformität:</strong> Alle Fahrzeuge sind ab Werk vollständig EU-konform — Typengenehmigung, CE-Kennzeichnung, Emissionsklassen.</li>
+        <li><strong>Kurze Lieferwege:</strong> Die Produktion in Österreich verkürzt Lieferzeiten für Kunden in AT, CZ, SK und HU erheblich.</li>
+        <li><strong>Lokale Wertschöpfung:</strong> Durch die Assembling-Linie werden Arbeitsplätze in der Region Steyr gesichert und neue geschaffen.</li>
+      </ul>
+
+      <div class="article-pullquote">
+        <p class="pullquote-text">„Assembled in Austria ist kein Kompromiss — es ist eine Qualitätszusage. Jedes Fahrzeug, das Steyr verlässt, steht für europäische Fertigungsstandards zu einem Preis, der den Markt verändern wird."</p>
+        <div class="pullquote-cite">— NOVUS automotive group, Gründungsteam</div>
+      </div>
+
+      <h2>Diesel und Elektro: Zwei Antriebe, ein Ziel</h2>
+      <p>Die Produktionslinie in Steyr ist von Beginn an für beide Antriebsstränge ausgelegt. Neben den bewährten Euro-VI-Dieselmodellen wird bereits in der ersten Produktionsphase auch der <strong>SITRAK C7H EV</strong> assembliert — ein batterieelektrischer 18-Tonner für die EMEA-Region.</p>
+
+      <h3>SITRAK C7H EV — Eckdaten</h3>
+      <p>Der SITRAK C7H EV ist mit einer Batteriekapazität von 423 kWh ausgestattet und bietet eine Reichweite von bis zu 400 Kilometern unter realen Bedingungen. Die Schnellladefunktion ermöglicht das Aufladen von 20 % auf 80 % in unter 60 Minuten — kompatibel mit CCS2-Ladeinfrastruktur.</p>
+      <ul>
+        <li>Batteriekapazität: 423 kWh (nutzbar)</li>
+        <li>Reichweite: bis zu 400 km (WLTP-Bedingungen)</li>
+        <li>Ladestandard: CCS2 (DC bis 250 kW)</li>
+        <li>Gesamtgewicht: 18 t (GVW)</li>
+        <li>Zero Emission: CO₂-Klasse 0</li>
+        <li>Förderungsfähig: Alt-für-Neu Klimabonus AT / Förderprogramme CZ, SK, HU</li>
+      </ul>
+
+      <h2>Der Markt und die Chancen</h2>
+      <p>Der europäische Markt für schwere Nutzfahrzeuge befindet sich in einem tiefgreifenden Wandel. Steigende Betriebskosten, Fahrverbote für ältere Dieselmodelle in Innenstädten und der Kostendruck im Transportgewerbe schaffen eine einmalige Gelegenheit für neue Marktteilnehmer, die Qualität zu wettbewerbsfähigen Preisen bieten können.</p>
+      <p>Sinotruk SITRAK ist in China bereits einer der größten Hersteller schwerer Nutzfahrzeuge und exportiert weltweit in über 100 Länder. Die Modelle der aktuellen Generation sind technisch auf Augenhöhe mit europäischen Premium-Herstellern — bei deutlich günstigerem Einstiegspreis.</p>
+      <p>Mit der Assembling-Linie in Steyr adressiert NOVUS gezielt den Mitteleuropa-Markt: Österreich, Tschechien, Slowakei und Ungarn. Alle vier Märkte weisen einen hohen Anteil kleiner und mittlerer Transportunternehmen auf, die sensibel auf Preisunterschiede reagieren und gleichzeitig europäische Qualitätsstandards fordern.</p>
+
+      <h2>Nächste Schritte: Händler- und Servicenetzwerk</h2>
+      <p>Parallel zum Produktionsstart baut NOVUS aktiv das autorisierte Händler- und Servicenetzwerk in allen vier Märkten auf. Derzeit sind erste Standorte in Wien, Prag, Bratislava und Budapest in Betrieb oder in der Endphase der Zertifizierung.</p>
+      <p>Für Unternehmen, die als autorisierter SITRAK Händler oder Servicepartner tätig werden möchten, ist der Bewerbungsprozess ab sofort geöffnet. NOVUS bietet Partnern exklusiven Gebietsschutz, vollständiges technisches Training und Marketing-Support.</p>
+
+      <div style="background:var(--off);padding:28px 32px;margin-top:32px;border-top:3px solid var(--red);">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(0,0,0,.3);margin-bottom:12px;">Weiterführende Links</div>
+        <a href="partner.html" style="display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-right:24px;">Partner werden →</a>
+        <a href="index.html#models" style="display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);">Alle Modelle →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="article-sidebar">
+    <div class="sidebar-block">
+      <div class="sidebar-title">Fakten zum Artikel</div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">Datum</span>
+        <span class="sfi-v">03. März 2026</span>
+      </div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">Standort</span>
+        <span class="sfi-v">Steyr, Österreich</span>
+      </div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">Produzent</span>
+        <span class="sfi-v">Steyr Automotive GmbH</span>
+      </div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">Importeur</span>
+        <span class="sfi-v">NOVUS automotive group</span>
+      </div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">Erstes Modell</span>
+        <span class="sfi-v">SITRAK C7H 4×2</span>
+      </div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">Märkte</span>
+        <span class="sfi-v">AT · CZ · SK · HU</span>
+      </div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">Antriebe</span>
+        <span class="sfi-v">Diesel Euro VI + EV</span>
+      </div>
+    </div>
+
+    <div class="sidebar-cta">
+      <div class="sidebar-cta-title">Jetzt anfragen</div>
+      <div class="sidebar-cta-body">Interesse an einem SITRAK? Kontaktieren Sie uns für ein unverbindliches Angebot oder eine Probefahrt.</div>
+      <a href="index.html#contact" class="sidebar-cta-btn">Anfrage stellen →</a>
+      <a href="partner.html" class="sidebar-cta-btn ghost">Partner werden</a>
+    </div>
+
+    <div class="sidebar-block" style="margin-top:0;">
+      <div class="sidebar-title">Verfügbare Modelle</div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">SITRAK C7H 4×2</span>
+        <span class="sfi-v" style="color:var(--blue);">Verfügbar</span>
+      </div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">SITRAK C7H EV</span>
+        <span class="sfi-v" style="color:var(--blue);">Verfügbar</span>
+      </div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">SITRAK C9H</span>
+        <span class="sfi-v" style="color:var(--blue);">Verfügbar</span>
+      </div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">SITRAK C7H 6×4 Kipper</span>
+        <span class="sfi-v" style="color:var(--blue);">Verfügbar</span>
+      </div>
+      <div class="sidebar-facts-item">
+        <span class="sfi-l">SITRAK C7H 8×4 Mixer</span>
+        <span class="sfi-v" style="color:var(--blue);">Verfügbar</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- ══ RELATED ══ -->
+<section class="related">
+  <div class="related-inner">
+    <div class="related-title">Weitere Meldungen</div>
+    <h2 class="related-h">Das könnte Sie<br><em>interessieren.</em></h2>
+    <div class="related-grid">
+      <a href="partner.html" class="rel-card">
+        <div class="rel-card-img"><div class="rel-card-img-inner">🤝</div></div>
+        <div class="rel-card-body">
+          <div class="rel-tag red">Partner</div>
+          <div class="rel-title">Händler & Service-Partner gesucht</div>
+          <p class="rel-text">NOVUS baut das autorisierte Netzwerk in AT, CZ, SK & HU aktiv auf. Jetzt bewerben.</p>
+          <span class="rel-link">Mehr erfahren →</span>
+        </div>
+      </a>
+      <a href="index.html#models" class="rel-card">
+        <div class="rel-card-img"><div class="rel-card-img-inner">🚛</div></div>
+        <div class="rel-card-body">
+          <div class="rel-tag blue">Modell</div>
+          <div class="rel-title">SITRAK C7H ab sofort bestellbar</div>
+          <p class="rel-text">Assembled in Austria — direkte Lieferung über NOVUS als Generalimporteur für Mitteleuropa.</p>
+          <span class="rel-link">Zu den Modellen →</span>
+        </div>
+      </a>
+      <a href="index.html#contact" class="rel-card">
+        <div class="rel-card-img"><div class="rel-card-img-inner">⚡</div></div>
+        <div class="rel-card-body">
+          <div class="rel-tag blue">Elektro</div>
+          <div class="rel-title">SITRAK C7H EV — Zero Emission Fernverkehr</div>
+          <p class="rel-text">Der batterieelektrische 18-Tonner mit 423 kWh und bis zu 400 km Reichweite. Jetzt anfragen.</p>
+          <span class="rel-link">Anfragen →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="height:44px;margin-bottom:20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" style="height:100%;width:auto;">
+          <text style="font-family:Georgia,'Times New Roman',serif;font-size:72px;font-weight:700;fill:#fff;" x="0" y="72">NOVUS</text>
+          <rect x="300" y="4" width="6" height="72" fill="#8b1a1a"/>
+          <rect x="310" y="4" width="6" height="72" fill="#8b1a1a"/>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#fff;" x="326" y="36">automotive</text>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#fff;" x="326" y="62">group</text>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;fill:rgba(255,255,255,.3);letter-spacing:3px;" x="2" y="104">THE POWER OF COMPETENCIES</text>
+        </svg>
+      </div>
+      <p class="f-tagline">The Power of Competencies.<br>Generalimporteur Sinotruk SITRAK<br>AT · CZ · SK · HU<br>Assembled in Austria · Steyr Automotive.</p>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Navigation</div>
+      <a href="index.html#models">Modelle / Models</a>
+      <a href="index.html#services">Service</a>
+      <a href="index.html#finder">Händlerfinder</a>
+      <a href="index.html#about">Unternehmen</a>
+      <a href="index.html#news">News</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Rechtliches</div>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Kontakt</div>
+      <a href="mailto:office@novustruck.com">office@novustruck.com</a>
+      <a>Trattnerring 1, 2435 Wienerherberg</a>
+      <a href="partner.html" style="margin-top:12px;color:rgba(255,255,255,.65);">Partner werden →</a>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <div class="f-copy">© 2026 NOVUS automotive group FlexCo · FN 678496 p · Alle Rechte vorbehalten.</div>
+  </div>
+</footer>
+
+<div id="cookie">
+  <p class="cookie-text">Diese Website verwendet ausschließlich technisch notwendige Cookies. <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-btns">
+    <button class="ck-no" onclick="closeCookie(false)">Ablehnen</button>
+    <button class="ck-yes" onclick="closeCookie(true)">Akzeptieren</button>
+  </div>
+</div>
+
+<script>
+const mobileNav=document.getElementById('mobile-nav');
+const overlay=document.getElementById('overlay');
+function openMobile(){mobileNav.classList.add('open');overlay.classList.add('on');}
+function closeMobile(){mobileNav.classList.remove('open');overlay.classList.remove('on');}
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+function copyLink(){navigator.clipboard.writeText(window.location.href).then(()=>{const btn=document.querySelector('.share-btn');btn.textContent='✓';setTimeout(()=>btn.textContent='🔗',2000);});}
+function closeCookie(ok){document.getElementById('cookie').classList.remove('show');localStorage.setItem('cookieConsent',ok?'y':'n');}
+if(!localStorage.getItem('cookieConsent'))setTimeout(()=>document.getElementById('cookie').classList.add('show'),1800);
+</script>
+</body>
+</html>

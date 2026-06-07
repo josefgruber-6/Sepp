@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutzerklärung — NOVUS automotive group</title>
+<meta name="description" content="Datenschutzerklärung gemäß DSGVO — NOVUS automotive group FlexCo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2d5f7e;--blue-d:#1e4258;--blue-dd:#0d1e28;
+  --red:#8b1a1a;--white:#fff;--off:#f5f4f2;--ink:#111;
+  --gray:#6b7a82;--light:#e8e4df;--nav-h:72px;
+  --ease-out:cubic-bezier(0.22,1,0.36,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;background:rgba(255,255,255,.97);
+  box-shadow:0 1px 0 rgba(0,0,0,.08);
+}
+.nav-menu{display:flex;align-items:center;gap:0;}
+.nav-menu a{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(0,0,0,.6);padding:10px 14px;transition:color .2s;white-space:nowrap;}
+.nav-menu a:hover{color:var(--ink);}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--red);color:#fff;padding:11px 20px;border:none;transition:background .2s;}
+.nav-cta:hover{background:#6e1515;}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px;}
+.nb{width:24px;height:2px;background:var(--ink);}
+
+#mobile-nav{position:fixed;top:0;right:0;bottom:0;z-index:950;width:320px;background:var(--blue-dd);transform:translateX(100%);transition:transform .4s var(--ease-out);padding:100px 40px 60px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;}
+#mobile-nav.open{transform:translateX(0);}
+#mobile-nav a{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s;}
+#mobile-nav a:hover{color:#fff;}
+#overlay{position:fixed;inset:0;z-index:799;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .3s;}
+#overlay.on{opacity:1;pointer-events:auto;}
+
+.page-hero{background:var(--off);padding:140px 48px 60px;border-bottom:3px solid var(--red);}
+.page-hero-inner{max-width:960px;margin:0 auto;}
+.breadcrumb{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+.breadcrumb a{color:var(--blue);}
+.page-h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,6vw,80px);font-weight:900;letter-spacing:-1px;line-height:.95;text-transform:uppercase;color:var(--ink);}
+.page-meta{font-size:13px;font-weight:300;color:var(--gray);margin-top:12px;}
+
+.content-wrap{max-width:960px;margin:0 auto;padding:72px 48px;}
+.toc{background:var(--off);padding:28px 32px;margin-bottom:56px;}
+.toc-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(0,0,0,.35);margin-bottom:14px;}
+.toc ol{padding-left:18px;display:grid;grid-template-columns:1fr 1fr;gap:4px 32px;}
+.toc ol li{font-size:13px;font-weight:300;color:var(--gray);padding:2px 0;}
+.toc ol li a{color:var(--blue);}
+.toc ol li a:hover{text-decoration:underline;}
+.imp-section{margin-bottom:56px;}
+.imp-section:last-child{margin-bottom:0;}
+.imp-h2{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:-.3px;color:var(--ink);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--light);}
+.imp-h3{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--blue);margin-bottom:8px;margin-top:24px;}
+.imp-p{font-size:14px;font-weight:300;line-height:1.85;color:#444;margin-bottom:12px;}
+.imp-p:last-child{margin-bottom:0;}
+.imp-p a{color:var(--blue);border-bottom:1px solid rgba(45,95,126,.3);}
+.imp-p a:hover{border-color:var(--blue);}
+.imp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--light);margin:20px 0;}
+.imp-cell{background:var(--off);padding:16px 20px;}
+.imp-cell-l{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(0,0,0,.35);margin-bottom:5px;}
+.imp-cell-v{font-size:14px;font-weight:400;color:var(--ink);}
+.imp-note{background:rgba(45,95,126,.06);border-left:3px solid var(--blue);padding:16px 20px;margin:20px 0;font-size:13px;font-weight:300;line-height:1.7;color:#444;}
+.rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--light);margin:20px 0;}
+.right-item{background:var(--white);padding:20px 22px;}
+.right-item-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--ink);margin-bottom:6px;}
+.right-item-text{font-size:12px;font-weight:300;line-height:1.6;color:var(--gray);}
+.update-box{background:var(--blue-dd);padding:20px 24px;margin-top:48px;display:flex;align-items:center;gap:20px;}
+.update-box-text{font-size:13px;font-weight:300;color:rgba(255,255,255,.55);}
+.update-box-date{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.8);flex-shrink:0;}
+
+footer{background:var(--ink);padding:80px 48px;border-top:3px solid var(--red);}
+.footer-grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;}
+.f-col-h{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px;}
+.f-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);padding:4px 0;transition:color .2s;}
+.f-col a:hover{color:#fff;}
+.f-tagline{font-size:13px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.35);}
+.footer-bar{max-width:1320px;margin:56px auto 0;padding-top:28px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.f-copy{font-size:11px;color:rgba(255,255,255,.2);}
+
+#cookie{position:fixed;bottom:0;left:0;right:0;z-index:950;background:rgba(13,13,13,.98);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid rgba(255,255,255,.08);transform:translateY(100%);transition:transform .4s var(--ease-out);}
+#cookie.show{transform:translateY(0);}
+.cookie-text{font-size:12px;font-weight:300;color:rgba(255,255,255,.45);max-width:600px;}
+.cookie-text a{color:var(--blue);}
+.cookie-btns{display:flex;gap:8px;flex-shrink:0;}
+.ck-no{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);padding:10px 18px;transition:all .2s;}
+.ck-no:hover{border-color:rgba(255,255,255,.5);color:#fff;}
+.ck-yes{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--blue);color:#fff;border:none;padding:10px 18px;transition:background .2s;}
+.ck-yes:hover{background:var(--blue-d);}
+
+@media(max-width:900px){
+  #nav{padding:0 20px;}
+  .nav-menu{display:none;}
+  .nav-burger{display:flex;}
+  .page-hero{padding:120px 24px 48px;}
+  .content-wrap{padding:56px 24px;}
+  .toc ol{grid-template-columns:1fr;}
+  footer{padding:60px 24px;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
+  .imp-grid,.rights-grid{grid-template-columns:1fr;}
+  #cookie{padding:20px;flex-direction:column;}
+}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" style="display:flex;align-items:center;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" style="height:44px;width:auto;">
+      <text style="font-family:Georgia,'Times New Roman',serif;font-size:72px;font-weight:700;fill:#2d5f7e;" x="0" y="72">NOVUS</text>
+      <rect x="300" y="4" width="6" height="72" fill="#8b1a1a"/>
+      <rect x="310" y="4" width="6" height="72" fill="#8b1a1a"/>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#2d5f7e;" x="326" y="36">automotive</text>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#2d5f7e;" x="326" y="62">group</text>
+      <text style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;fill:#8b1a1a;letter-spacing:3px;" x="2" y="104">THE POWER OF COMPETENCIES</text>
+    </svg>
+  </a>
+  <div class="nav-menu">
+    <a href="index.html#models">Modelle</a>
+    <a href="index.html#services">Service</a>
+    <a href="index.html#finder">Händlerfinder</a>
+    <a href="index.html#about">Unternehmen</a>
+    <a href="index.html#news">News</a>
+    <a href="index.html#contact">Kontakt</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <a href="partner.html" class="nav-cta">Partner werden</a>
+  </div>
+  <button class="nav-burger" onclick="openMobile()" aria-label="Menü öffnen">
+    <span class="nb"></span><span class="nb"></span><span class="nb"></span>
+  </button>
+</nav>
+
+<div id="mobile-nav">
+  <a href="index.html#models" onclick="closeMobile()">Modelle</a>
+  <a href="index.html#services" onclick="closeMobile()">Service</a>
+  <a href="index.html#finder" onclick="closeMobile()">Händlerfinder</a>
+  <a href="index.html#about" onclick="closeMobile()">Unternehmen</a>
+  <a href="index.html#news" onclick="closeMobile()">News</a>
+  <a href="index.html#contact" onclick="closeMobile()">Kontakt</a>
+  <a href="partner.html" onclick="closeMobile()" style="color:#fff;margin-top:20px;border-top:1px solid rgba(255,255,255,.15);padding-top:20px;">Partner werden →</a>
+</div>
+<div id="overlay" onclick="closeMobile()"></div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">NOVUS automotive group</a>
+      <span>›</span>
+      <span>Datenschutz</span>
+    </div>
+    <h1 class="page-h1">Datenschutz&shy;erklärung</h1>
+    <p class="page-meta">Gemäß Datenschutz-Grundverordnung (DSGVO) und dem österreichischen Datenschutzgesetz (DSG)</p>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="toc">
+    <div class="toc-title">Inhaltsverzeichnis</div>
+    <ol>
+      <li><a href="#verantwortlicher">Verantwortlicher</a></li>
+      <li><a href="#erhebung">Erhebung von Daten</a></li>
+      <li><a href="#kontaktformular">Kontaktformular</a></li>
+      <li><a href="#cookies">Cookies</a></li>
+      <li><a href="#hosting">Hosting & Server-Logs</a></li>
+      <li><a href="#dritte">Einbindung Dritter Dienste</a></li>
+      <li><a href="#rechte">Ihre Rechte</a></li>
+      <li><a href="#speicherdauer">Speicherdauer</a></li>
+      <li><a href="#sicherheit">Datensicherheit</a></li>
+      <li><a href="#aenderungen">Änderungen</a></li>
+    </ol>
+  </div>
+
+  <div class="imp-section" id="verantwortlicher">
+    <h2 class="imp-h2">1. Verantwortlicher</h2>
+    <p class="imp-p">Verantwortlicher im Sinne der DSGVO für die Verarbeitung personenbezogener Daten auf dieser Website ist:</p>
+    <div class="imp-grid">
+      <div class="imp-cell">
+        <div class="imp-cell-l">Unternehmen</div>
+        <div class="imp-cell-v">NOVUS automotive group FlexCo</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Firmenbuchnummer</div>
+        <div class="imp-cell-v">FN 678496 p</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Adresse</div>
+        <div class="imp-cell-v">Trattnerring 1, 2435 Wienerherberg, Österreich</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Kontakt (Datenschutz)</div>
+        <div class="imp-cell-v"><a href="mailto:office@novustruck.com">office@novustruck.com</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="imp-section" id="erhebung">
+    <h2 class="imp-h2">2. Erhebung und Verarbeitung personenbezogener Daten</h2>
+    <h3 class="imp-h3">Beim Besuch dieser Website</h3>
+    <p class="imp-p">Beim Aufrufen dieser Website werden durch den Webserver automatisch Informationen in sogenannten Server-Log-Dateien gespeichert. Dazu gehören: IP-Adresse (anonymisiert), Datum und Uhrzeit der Anfrage, aufgerufene URL, verwendeter Browser und Betriebssystem sowie der Referrer (zuvor besuchte Website).</p>
+    <p class="imp-p">Diese Daten werden ausschließlich zur technischen Bereitstellung der Website und zur Fehlerdiagnose verwendet. Eine Zusammenführung mit anderen Datenquellen erfolgt nicht.</p>
+    <p class="imp-p"><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer technisch fehlerfreien Darstellung der Website).</p>
+    <h3 class="imp-h3">Beim Ausfüllen von Formularen</h3>
+    <p class="imp-p">Wenn Sie über das Kontaktformular oder das Partnerbewerbungsformular eine Anfrage stellen, werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Unternehmen, Nachricht etc.) zur Bearbeitung Ihrer Anfrage gespeichert und verwendet.</p>
+    <p class="imp-p"><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch Absenden des Formulars).</p>
+  </div>
+
+  <div class="imp-section" id="kontaktformular">
+    <h2 class="imp-h2">3. Kontaktformular & Partnerbewerbung</h2>
+    <p class="imp-p">Wenn Sie das Kontaktformular oder das Partnerbewerbungsformular nutzen, werden Ihre Angaben inklusive der dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+    <div class="imp-note">
+      <strong>Verarbeitete Daten:</strong> Name, E-Mail-Adresse, Telefonnummer, Unternehmensname, Standort, Nachricht sowie ggf. weitere freiwillig gemachte Angaben.<br><br>
+      <strong>Zweck:</strong> Bearbeitung von Kontakt- und Partneranfragen, Rückmeldung und Vertragsanbahnung.<br><br>
+      <strong>Speicherdauer:</strong> Die im Rahmen von Kontaktanfragen übermittelten Daten werden nach abschließender Bearbeitung der Anfrage gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen. Im Regelfall innerhalb von 12 Monaten.
+    </div>
+  </div>
+
+  <div class="imp-section" id="cookies">
+    <h2 class="imp-h2">4. Cookies</h2>
+    <p class="imp-p">Diese Website verwendet ausschließlich technisch notwendige Cookies. Es werden keine Tracking-Cookies, Analyse-Cookies oder Cookies für Werbezwecke eingesetzt.</p>
+    <h3 class="imp-h3">Eingesetzte Cookies</h3>
+    <div class="imp-grid" style="grid-template-columns:1fr 1fr 1fr;">
+      <div class="imp-cell">
+        <div class="imp-cell-l">Name</div>
+        <div class="imp-cell-v"><code>cookieConsent</code></div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Zweck</div>
+        <div class="imp-cell-v">Speichert Ihre Cookie-Auswahl (localStorage)</div>
+      </div>
+      <div class="imp-cell">
+        <div class="imp-cell-l">Speicherdauer</div>
+        <div class="imp-cell-v">Bis zum Löschen des Browser-Speichers</div>
+      </div>
+    </div>
+    <p class="imp-p">Sie können die Speicherung von Cookies durch eine entsprechende Einstellung Ihres Browsers verhindern. Beachten Sie, dass in diesem Fall möglicherweise nicht alle Funktionen der Website vollumfänglich genutzt werden können.</p>
+    <p class="imp-p"><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer benutzerfreundlichen Website).</p>
+  </div>
+
+  <div class="imp-section" id="hosting">
+    <h2 class="imp-h2">5. Hosting & Server-Logs</h2>
+    <p class="imp-p">Diese Website wird bei einem professionellen Hosting-Anbieter gehostet. Der Hosting-Anbieter verarbeitet personenbezogene Daten im Rahmen von Server-Log-Dateien. Die Datenverarbeitung erfolgt auf Basis eines Auftragsverarbeitungsvertrags (AVV) gemäß Art. 28 DSGVO.</p>
+    <p class="imp-p">Server-Logs werden automatisch nach spätestens 7 Tagen gelöscht.</p>
+  </div>
+
+  <div class="imp-section" id="dritte">
+    <h2 class="imp-h2">6. Einbindung von Diensten Dritter</h2>
+    <h3 class="imp-h3">Google Fonts</h3>
+    <p class="imp-p">Diese Website verwendet Google Fonts (Anbieter: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). Beim Laden der Schriften wird eine Verbindung zu Google-Servern hergestellt, wobei Ihre IP-Adresse übertragen werden kann. Zur Minimierung der Datenweitergabe werden die Fonts per <code>link rel="preconnect"</code> vorab verbunden.</p>
+    <p class="imp-p">Alternativlösung: Falls Sie die Verwendung von Google Fonts ablehnen, können Sie in Ihrem Browser den Abruf externer Ressourcen blockieren. Die Website ist weiterhin vollständig nutzbar.</p>
+    <h3 class="imp-h3">Leaflet / OpenStreetMap (Händlerfinder)</h3>
+    <p class="imp-p">Auf der Hauptseite wird im Händlerfinder die JavaScript-Bibliothek Leaflet.js in Kombination mit OpenStreetMap-Kartendaten eingesetzt. Beim Laden der Karte werden Kartenkacheln von OpenStreetMap-Servern geladen. Dabei kann Ihre IP-Adresse an OpenStreetMap Foundation (OSMF) übertragen werden.</p>
+    <p class="imp-p">Weitere Informationen: <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">OpenStreetMap Datenschutzrichtlinie</a></p>
+  </div>
+
+  <div class="imp-section" id="rechte">
+    <h2 class="imp-h2">7. Ihre Rechte als betroffene Person</h2>
+    <p class="imp-p">Gemäß DSGVO stehen Ihnen folgende Rechte zu. Zur Ausübung wenden Sie sich an: <a href="mailto:office@novustruck.com">office@novustruck.com</a></p>
+    <div class="rights-grid">
+      <div class="right-item">
+        <div class="right-item-title">Auskunftsrecht (Art. 15 DSGVO)</div>
+        <div class="right-item-text">Sie haben das Recht, eine Bestätigung darüber zu erhalten, ob und welche personenbezogenen Daten von Ihnen verarbeitet werden.</div>
+      </div>
+      <div class="right-item">
+        <div class="right-item-title">Berichtigungsrecht (Art. 16 DSGVO)</div>
+        <div class="right-item-text">Sie haben das Recht auf unverzügliche Berichtigung unrichtiger oder Vervollständigung unvollständiger personenbezogener Daten.</div>
+      </div>
+      <div class="right-item">
+        <div class="right-item-title">Recht auf Löschung (Art. 17 DSGVO)</div>
+        <div class="right-item-text">Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten zu verlangen, sofern die gesetzlichen Voraussetzungen erfüllt sind.</div>
+      </div>
+      <div class="right-item">
+        <div class="right-item-title">Einschränkung der Verarbeitung (Art. 18 DSGVO)</div>
+        <div class="right-item-text">Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer Daten zu verlangen.</div>
+      </div>
+      <div class="right-item">
+        <div class="right-item-title">Widerspruchsrecht (Art. 21 DSGVO)</div>
+        <div class="right-item-text">Sie haben das Recht, jederzeit gegen die Verarbeitung Ihrer personenbezogenen Daten Widerspruch einzulegen.</div>
+      </div>
+      <div class="right-item">
+        <div class="right-item-title">Beschwerderecht (Art. 77 DSGVO)</div>
+        <div class="right-item-text">Sie haben das Recht, sich bei der zuständigen Aufsichtsbehörde zu beschweren: <strong>Datenschutzbehörde Österreich</strong>, Barichgasse 40–42, 1030 Wien, <a href="mailto:dsb@dsb.gv.at">dsb@dsb.gv.at</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="imp-section" id="speicherdauer">
+    <h2 class="imp-h2">8. Speicherdauer</h2>
+    <p class="imp-p">Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Verarbeitungszweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen (z.B. steuerrechtliche Aufbewahrungspflichten von 7 Jahren gemäß BAO).</p>
+    <p class="imp-p">Anfragedaten aus Kontakt- und Partnerformularen werden nach Abschluss der Bearbeitung gelöscht, sofern kein Vertragsverhältnis entsteht — spätestens nach 12 Monaten.</p>
+  </div>
+
+  <div class="imp-section" id="sicherheit">
+    <h2 class="imp-h2">9. Datensicherheit</h2>
+    <p class="imp-p">Diese Website nutzt aus Sicherheitsgründen eine SSL/TLS-Verschlüsselung für die Übertragung von Daten. Eine verschlüsselte Verbindung erkennen Sie an dem Schloss-Symbol in der Adresszeile Ihres Browsers sowie an dem Präfix <code>https://</code>.</p>
+    <p class="imp-p">Wir treffen angemessene technische und organisatorische Maßnahmen, um Ihre personenbezogenen Daten gegen zufällige oder vorsätzliche Manipulationen, Verlust, Zerstörung oder den Zugriff unberechtigter Personen zu schützen.</p>
+  </div>
+
+  <div class="imp-section" id="aenderungen">
+    <h2 class="imp-h2">10. Änderungen dieser Datenschutzerklärung</h2>
+    <p class="imp-p">Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie stets den aktuellen rechtlichen Anforderungen anzupassen oder Änderungen unserer Dienstleistungen in der Datenschutzerklärung umzusetzen. Bei Ihrem nächsten Besuch gilt dann die neue Datenschutzerklärung.</p>
+    <div class="update-box">
+      <div class="update-box-date">Stand: Juni 2026</div>
+      <div class="update-box-text">Diese Datenschutzerklärung wurde zuletzt im Juni 2026 aktualisiert und entspricht den Anforderungen der DSGVO sowie des österreichischen Datenschutzgesetzes (DSG).</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="height:44px;margin-bottom:20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" style="height:100%;width:auto;">
+          <text style="font-family:Georgia,'Times New Roman',serif;font-size:72px;font-weight:700;fill:#fff;" x="0" y="72">NOVUS</text>
+          <rect x="300" y="4" width="6" height="72" fill="#8b1a1a"/>
+          <rect x="310" y="4" width="6" height="72" fill="#8b1a1a"/>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#fff;" x="326" y="36">automotive</text>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:400;fill:#fff;" x="326" y="62">group</text>
+          <text style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;fill:rgba(255,255,255,.3);letter-spacing:3px;" x="2" y="104">THE POWER OF COMPETENCIES</text>
+        </svg>
+      </div>
+      <p class="f-tagline">The Power of Competencies.<br>Generalimporteur Sinotruk SITRAK<br>AT · CZ · SK · HU<br>Assembled in Austria · Steyr Automotive.</p>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Navigation</div>
+      <a href="index.html#models">Modelle / Models</a>
+      <a href="index.html#services">Service</a>
+      <a href="index.html#finder">Händlerfinder</a>
+      <a href="index.html#about">Unternehmen</a>
+      <a href="index.html#news">News</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Rechtliches</div>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="f-col">
+      <div class="f-col-h">Kontakt</div>
+      <a href="mailto:office@novustruck.com">office@novustruck.com</a>
+      <a>Trattnerring 1, 2435 Wienerherberg</a>
+      <a href="partner.html" style="margin-top:12px;color:rgba(255,255,255,.65);">Partner werden →</a>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <div class="f-copy">© 2026 NOVUS automotive group FlexCo · FN 678496 p · Alle Rechte vorbehalten.</div>
+  </div>
+</footer>
+
+<div id="cookie">
+  <p class="cookie-text">Diese Website verwendet ausschließlich technisch notwendige Cookies. Weitere Informationen in dieser <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-btns">
+    <button class="ck-no" onclick="closeCookie(false)">Ablehnen</button>
+    <button class="ck-yes" onclick="closeCookie(true)">Akzeptieren</button>
+  </div>
+</div>
+
+<script>
+const mobileNav=document.getElementById('mobile-nav');
+const overlay=document.getElementById('overlay');
+function openMobile(){mobileNav.classList.add('open');overlay.classList.add('on');}
+function closeMobile(){mobileNav.classList.remove('open');overlay.classList.remove('on');}
+function closeCookie(ok){document.getElementById('cookie').classList.remove('show');localStorage.setItem('cookieConsent',ok?'y':'n');}
+if(!localStorage.getItem('cookieConsent'))setTimeout(()=>document.getElementById('cookie').classList.add('show'),1800);
+</script>
+</body>
+</html>
