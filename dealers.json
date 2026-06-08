@@ -1,0 +1,39 @@
+[
+  {
+    "name": "NOVUS automotive group",
+    "addr": "Trattnerring 1, 2435 Wienerherberg, AT",
+    "lat": 47.9833,
+    "lng": 16.4167,
+    "type": "d",
+    "phone": "+43 664 4002301",
+    "website": "https://novustruck.com"
+  },
+  {
+    "name": "SITRAK Service AT — Wien",
+    "addr": "Wien, Österreich",
+    "lat": 48.2082,
+    "lng": 16.3738,
+    "type": "s"
+  },
+  {
+    "name": "SITRAK Dealer CZ — Praha",
+    "addr": "Praha, Česká republika",
+    "lat": 50.0755,
+    "lng": 14.4378,
+    "type": "d"
+  },
+  {
+    "name": "SITRAK Service SK — Bratislava",
+    "addr": "Bratislava, Slovensko",
+    "lat": 48.1486,
+    "lng": 17.1077,
+    "type": "s"
+  },
+  {
+    "name": "SITRAK Dealer HU — Budapest",
+    "addr": "Budapest, Magyarország",
+    "lat": 47.4979,
+    "lng": 19.0402,
+    "type": "d"
+  }
+]
