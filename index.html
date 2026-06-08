@@ -1811,9 +1811,9 @@ span[data-lang].on{display:inline;}
       <span data-lang="cz">Váš dotaz</span>
       <span data-lang="sk">Vaša otázka</span>
     </div>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleForm(event)">
-      <input type="hidden" name="form-name" value="contact">
-      <input type="hidden" name="bot-field" style="display:none">
+    <form id="contact-form" onsubmit="handleForm(event)">
+      <input type="hidden" name="_subject" value="Anfrage — NOVUS automotive group">
+      <input type="hidden" name="_replyto" id="fs-replyto">
       <div class="fg-row">
         <div class="fg">
           <label><span data-lang="de" class="on">Vorname *</span><span data-lang="en">First name *</span><span data-lang="hu">Keresztnév *</span><span data-lang="cz">Jméno *</span><span data-lang="sk">Meno *</span></label>
@@ -1863,6 +1863,13 @@ span[data-lang].on{display:inline;}
         <span data-lang="hu">Köszönjük! 48 órán belül visszajelzünk.</span>
         <span data-lang="cz">Děkujeme! Ozveme se do 48 hodin.</span>
         <span data-lang="sk">Ďakujeme! Ozveme sa do 48 hodín.</span>
+      </div>
+      <div class="cf-error" id="cf-err" style="display:none;margin-top:16px;padding:14px 18px;background:rgba(139,26,26,.12);border-left:3px solid var(--red);color:var(--red);font-size:13px;font-weight:500;">
+        ✕ <span data-lang="de" class="on">Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an office@novustruck.com</span>
+        <span data-lang="en">Error sending. Please try again or email office@novustruck.com</span>
+        <span data-lang="hu">Hiba küldéskor. Kérjük írjon: office@novustruck.com</span>
+        <span data-lang="cz">Chyba odesílání. Napište na office@novustruck.com</span>
+        <span data-lang="sk">Chyba odosielania. Napíšte na office@novustruck.com</span>
       </div>
     </form>
   </div>
@@ -2030,9 +2037,31 @@ document.getElementById('f-input').addEventListener('keydown',e=>{if(e.key==='En
 // ── FORM ──
 function handleForm(e){
   e.preventDefault();
-  const f=e.target,d=new FormData(f);
-  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()})
-    .catch(()=>{}).finally(()=>{document.getElementById('cf-ok').style.display='block';f.reset();});
+  const f=e.target;
+  const btn=f.querySelector('.cf-btn');
+  // sync _replyto with email field
+  document.getElementById('fs-replyto').value=f.querySelector('[name="email"]').value;
+  btn.disabled=true;
+  const origText=btn.innerHTML;
+  btn.innerHTML='<span data-lang="de" class="on">Wird gesendet …</span><span data-lang="en">Sending …</span><span data-lang="hu">Küldés …</span><span data-lang="cz">Odesílání …</span><span data-lang="sk">Odosielanie …</span>';
+  fetch('https://formspree.io/f/mrevqlod',{
+    method:'POST',
+    headers:{'Accept':'application/json','Content-Type':'application/x-www-form-urlencoded'},
+    body:new URLSearchParams(new FormData(f)).toString()
+  }).then(function(r){
+    if(r.ok){
+      document.getElementById('cf-ok').style.display='block';
+      document.getElementById('cf-err').style.display='none';
+      f.reset();
+      btn.style.display='none';
+    } else {
+      document.getElementById('cf-err').style.display='block';
+      btn.disabled=false;btn.innerHTML=origText;
+    }
+  }).catch(function(){
+    document.getElementById('cf-err').style.display='block';
+    btn.disabled=false;btn.innerHTML=origText;
+  });
 }
 
 
