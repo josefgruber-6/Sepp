@@ -692,6 +692,38 @@ span[data-lang].on{display:inline;}
 /* ══════════════════════════════════════════════
    VIDEO SECTION
 ══════════════════════════════════════════════ */
+.vid-section{
+  position:relative;height:100vh;min-height:500px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+#bg-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+}
+.vid-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.3) 0%,rgba(0,0,0,.55) 100%);
+}
+.vid-content{
+  position:relative;z-index:2;text-align:center;padding:0 24px;max-width:680px;
+}
+.vid-cta{
+  display:inline-block;margin-top:32px;
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;color:#fff;
+  border:1.5px solid rgba(255,255,255,.5);padding:14px 32px;
+  transition:all .25s;
+}
+.vid-cta:hover{background:rgba(255,255,255,.12);border-color:#fff;}
+.vid-mute-btn{
+  position:absolute;bottom:24px;right:24px;z-index:3;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:background .2s;
+}
+.vid-mute-btn:hover{background:rgba(0,0,0,.7);}
+
 .video-hdr{padding:80px 48px 56px;text-align:center;background:var(--ink);}
 .yt-outer{
   position:relative;padding-top:56.25%;overflow:hidden;
@@ -736,6 +768,7 @@ span[data-lang].on{display:inline;}
   .services-grid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:900px){
+  .vid-section{height:70vh;min-height:420px;}
   .video-hdr{padding:52px 20px 36px;}
   .video-controls{padding:12px 20px;}
   .gallery-grid{grid-template-columns:1fr 1fr !important;grid-template-rows:200px 200px 200px !important;}
@@ -785,6 +818,7 @@ span[data-lang].on{display:inline;}
   .hero-sub{font-size:15px;}
   .stats-band{grid-template-columns:1fr 1fr;}
   .stat-n{font-size:26px;}
+  .vid-section{height:60vh;min-height:360px;}
   .video-hdr{padding:40px 20px 28px;}
   .wrap{padding-left:20px !important;padding-right:20px !important;}
 }
@@ -1020,43 +1054,32 @@ span[data-lang].on{display:inline;}
 </div>
 
 <!-- ══ VIDEO ══ -->
-<section id="video" style="background:var(--ink);padding:0;">
-  <div class="video-hdr">
+<section id="video" class="vid-section">
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="https://drive.google.com/uc?export=download&id=1Tn27hSxVuuUakh5utBAifsvUTr8PgPBf&confirm=t" type="video/mp4">
+  </video>
+  <div class="vid-overlay"></div>
+  <div class="vid-content">
     <div class="sec-tag lt fade-up" style="justify-content:center;">SITRAK · Assembled in Austria</div>
     <h2 class="sec-h wh fade-up d1" style="text-align:center;margin:16px 0 14px;">
       Erleben Sie den <em>SITRAK.</em>
     </h2>
-    <p class="fade-up d2" style="font-size:16px;font-weight:300;color:rgba(255,255,255,.45);max-width:480px;margin:0 auto;line-height:1.75;">
+    <p class="fade-up d2" style="font-size:16px;font-weight:300;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto;line-height:1.75;">
       Sehen Sie den SITRAK C7H in Aktion — produziert bei Steyr Automotive in Österreich.
     </p>
+    <a href="#models" class="vid-cta fade-up d3">Modelle entdecken →</a>
   </div>
-  <div class="yt-outer" id="yt-outer">
-    <div class="yt-cover" id="yt-cover" onclick="forcePlayYT()">
-      <div class="yt-play-btn">
-        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="40" cy="40" r="38" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
-          <circle cx="40" cy="40" r="28" fill="rgba(255,255,255,.08)"/>
-          <path d="M33 27l22 13-22 13V27z" fill="#fff"/>
-        </svg>
-      </div>
-      <div class="yt-cover-label">Video abspielen</div>
-    </div>
-    <div id="yt-player-div"></div>
-  </div>
-  <div class="video-controls" id="video-controls" style="display:none;">
-    <button class="vc-mute" id="vc-mute" onclick="toggleYTMute()">
-      <svg id="vc-icon-sound" viewBox="0 0 24 24" fill="none" width="16" height="16">
-        <path d="M3 9v6h4l5 5V4L7 9H3z" fill="rgba(255,255,255,.6)"/>
-        <path d="M16.5 12c0-1.77-1-3.29-2.5-4.03v8.05C15.5 15.29 16.5 13.77 16.5 12z" fill="rgba(255,255,255,.6)"/>
-        <path d="M14 3.23v2.06c3.89.82 7 4.29 7 8.71s-3.11 7.89-7 8.71v2.06A10 10 0 0024 12 10 10 0 0014 3.23z" fill="rgba(255,255,255,.25)"/>
-      </svg>
-      <svg id="vc-icon-muted" viewBox="0 0 24 24" fill="none" width="16" height="16" style="display:none;">
-        <path d="M3 9v6h4l5 5V4L7 9H3z" fill="rgba(255,255,255,.6)"/>
-        <path d="M19 8l-4 4 4 4-1 1-4-4-4 4-1-1 4-4-4-4 1-1 4 4 4-4 1 1z" fill="rgba(255,255,255,.6)"/>
-      </svg>
-      <span id="vc-label">Ton einschalten</span>
-    </button>
-  </div>
+  <button class="vid-mute-btn" id="vid-mute-btn" onclick="toggleVidMute()" title="Ton ein/aus">
+    <svg id="vid-icon-muted" viewBox="0 0 24 24" fill="none" width="18" height="18">
+      <path d="M3 9v6h4l5 5V4L7 9H3z" fill="#fff"/>
+      <path d="M17 9l-4 4 4 4 1-1-3-3 3-3-1-1z" fill="#fff"/>
+    </svg>
+    <svg id="vid-icon-sound" viewBox="0 0 24 24" fill="none" width="18" height="18" style="display:none">
+      <path d="M3 9v6h4l5 5V4L7 9H3z" fill="#fff"/>
+      <path d="M16.5 12c0-1.77-1-3.29-2.5-4.03v8.05C15.5 15.29 16.5 13.77 16.5 12z" fill="#fff"/>
+      <path d="M14 3.23v2.06c3.89.82 7 4.29 7 8.71s-3.11 7.89-7 8.71v2.06A10 10 0 0024 12 10 10 0 0014 3.23z" fill="rgba(255,255,255,.5)"/>
+    </svg>
+  </button>
 </section>
 
 <!-- ══ MODELS ══ -->
@@ -2120,58 +2143,11 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
 
 
 // ── YOUTUBE SCROLL AUTOPLAY ──────────────────────────────────────────────────
-var _ytPlayer,_ytReady=false,_ytMuted=true;
-var _isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;
-var _ytStarted=false;
-(function(){
-  var t=document.createElement('script');
-  t.src='https://www.youtube.com/iframe_api';
-  document.head.appendChild(t);
-})();
-window.onYouTubeIframeAPIReady=function(){
-  _ytPlayer=new YT.Player('yt-player-div',{
-    videoId:'1bGKQMCPMb8',
-    playerVars:{autoplay:0,mute:1,controls:1,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,enablejsapi:1},
-    events:{onReady:function(e){_ytReady=true;},onStateChange:function(e){
-      if(e.data===YT.PlayerState.PLAYING&&!_ytStarted){
-        _ytStarted=true;
-        document.getElementById('video-controls').style.display='flex';
-      }
-    }}
-  });
-};
-var _ytObs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){
-      if(_ytReady&&!_isIOS){
-        _ytPlayer.playVideo();
-        document.getElementById('yt-cover').classList.add('hidden');
-      }
-    } else {
-      if(_ytReady&&_ytStarted) _ytPlayer.pauseVideo();
-    }
-  });
-},{threshold:0.35});
-var _ytOuter=document.getElementById('yt-outer');
-if(_ytOuter) _ytObs.observe(_ytOuter);
-function forcePlayYT(){if(_ytReady){_ytPlayer.playVideo();document.getElementById('yt-cover').classList.add('hidden');}}
-function toggleYTMute(){
-  if(!_ytReady)return;
-  _ytMuted=!_ytMuted;
-  var iconS=document.getElementById('vc-icon-sound');
-  var iconM=document.getElementById('vc-icon-muted');
-  var label=document.getElementById('vc-label');
-  if(_ytMuted){
-    _ytPlayer.mute();
-    if(iconS)iconS.style.display='';
-    if(iconM)iconM.style.display='none';
-    if(label)label.textContent='Ton einschalten';
-  } else {
-    _ytPlayer.unMute();
-    if(iconS)iconS.style.display='none';
-    if(iconM)iconM.style.display='';
-    if(label)label.textContent='Ton ausschalten';
-  }
+function toggleVidMute(){
+  var v=document.getElementById('bg-video');
+  v.muted=!v.muted;
+  document.getElementById('vid-icon-muted').style.display=v.muted?'block':'none';
+  document.getElementById('vid-icon-sound').style.display=v.muted?'none':'block';
 }
 
 // ── COOKIE ──
