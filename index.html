@@ -659,6 +659,8 @@ span[data-lang]{display:none;}
 span[data-lang].on{display:inline;}
 
 
+.services-outer{padding:0 48px;}
+.models-hdr-inner{max-width:1320px;margin:0 auto;padding:0 48px 40px;}
 .gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:320px 320px;gap:3px;}
 .interior-hdr{padding:72px 48px 48px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;max-width:100%;}
 .services-hdr{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px;}
@@ -668,12 +670,15 @@ span[data-lang].on{display:inline;}
    VIDEO SECTION
 ══════════════════════════════════════════════ */
 .video-hdr{padding:80px 48px 56px;text-align:center;background:var(--ink);}
-.yt-outer{position:relative;padding-top:56.25%;background:#000;overflow:hidden;}
+.yt-outer{
+  position:relative;padding-top:56.25%;overflow:hidden;
+  background:linear-gradient(135deg,#0d1e28 0%,#1a3347 40%,#0d2b3e 70%,#060f16 100%);
+}
 #yt-player-div{position:absolute;inset:0;width:100%;height:100%;}
 #yt-player-div iframe{position:absolute;inset:0;width:100%;height:100%;border:none;display:block;}
 .yt-cover{
   position:absolute;inset:0;z-index:10;
-  background:linear-gradient(160deg,rgba(0,0,0,.6) 0%,rgba(13,30,40,.5) 100%);
+  background:transparent;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   cursor:pointer;transition:opacity .7s ease;
 }
@@ -722,8 +727,9 @@ span[data-lang].on{display:inline;}
   .hero-btns{flex-direction:column;align-items:flex-start;}
   .stats-band{grid-template-columns:1fr 1fr;}
   .stat:nth-child(5){grid-column:1/-1;}
-  .wrap,.sec,.news-grid{padding-left:0;padding-right:0;}
-  .sec{padding:64px 24px;}
+  .wrap{padding-left:20px;padding-right:20px;}
+  .sec{padding:64px 20px;}
+  .news-grid{padding-left:0;padding-right:0;}
   .models-hdr{padding:0 24px 40px;}
   .model-card{flex:0 0 85vw;}
   #assembly{height:auto;min-height:0;}
@@ -747,6 +753,17 @@ span[data-lang].on{display:inline;}
   .footer-grid{grid-template-columns:1fr;}
   .stats-band{grid-template-columns:1fr 1fr;}
   .fg-row{grid-template-columns:1fr;}
+  .svc{padding:28px 20px;}
+  #services{padding:52px 0;}
+  .services-hdr{padding:0 20px 32px !important;}
+}
+@media(max-width:480px){
+  .hero-h1{font-size:clamp(36px,9.5vw,52px);}
+  .hero-sub{font-size:15px;}
+  .stats-band{grid-template-columns:1fr 1fr;}
+  .stat-n{font-size:26px;}
+  .video-hdr{padding:40px 20px 28px;}
+  .wrap{padding-left:20px !important;padding-right:20px !important;}
 }
 
 
@@ -1100,7 +1117,7 @@ span[data-lang].on{display:inline;}
 
 <!-- ══ PHOTO GALLERY ══ -->
 <section id="photo-gallery" style="background:var(--ink);padding:72px 0 0;">
-  <div style="max-width:1320px;margin:0 auto;padding:0 48px 40px;">
+  <div class="models-hdr-inner">
     <div class="sec-tag lt fade-up">Fotogalerie · SITRAK unterwegs in Europa</div>
     <h2 class="sec-h wh fade-up d1">Der SITRAK in <em>seiner Welt.</em></h2>
   </div>
@@ -1252,7 +1269,7 @@ span[data-lang].on{display:inline;}
       </p>
     </div>
   </div>
-  <div style="padding:0 48px;">
+  <div class="services-outer">
     <div class="services-grid fade-up d1" style="max-width:1320px;margin:0 auto;">
 
       <div class="svc">
